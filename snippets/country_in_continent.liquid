@@ -1,0 +1,7 @@
+{%- assign code = country_in_continent | strip | strip_newlines | strip_html | downcase | append: '|' | prepend: '|' -%}
+{%- if '|dz|ao|bw|bi|cm|cv|cf|td|km|yt|cg|cd|bj|gq|et|er|dj|ga|gm|gh|gn|ci|ke|ls|lr|ly|mg|mw|ml|mr|mu|ma|mz|na|ne|ng|gw|re|rw|sh|st|sn|sc|sl|so|za|zw|ss|eh|sd|sz|tg|tn|ug|eg|tz|bf|zm|' contains code -%}af
+{%- elsif '|af|az|bh|bd|am|bt|io|bn|mm|kh|lk|cn|tw|cx|cc|cy|ge|ps|hk|in|id|ir|iq|il|jp|kz|jo|kp|kr|kw|kg|la|lb|mo|my|mv|mn|om|np|pk|ph|tl|qa|ru|sa|sg|vn|sy|tj|th|ae|tr|tm|uz|ye|xe|xd|xs|' contains code -%}as
+{%- elsif '|al|ad|az|at|am|be|ba|bg|by|hr|cy|cz|dk|ee|fo|fi|ax|fr|ge|de|gi|gr|va|hu|is|ie|it|kz|lv|li|lt|lu|mt|mc|md|me|nl|no|pl|pt|ro|ru|sm|rs|sk|si|es|sj|se|ch|tr|ua|mk|gb|gg|je|im|' contains code -%}eu
+{%- elsif '|ag|bs|bb|bm|bz|vg|ca|ky|cr|cu|dm|do|sv|gl|gd|gp|gt|ht|hn|jm|mq|mx|ms|an|cw|aw|sx|bq|ni|um|pa|pr|bl|kn|ai|lc|mf|pm|vc|tt|tc|us|vi|' contains code -%}na
+{%- elsif '|as|au|sb|ck|fj|pf|ki|gu|nr|nc|vu|nz|nu|nf|mp|um|fm|mh|pw|pg|pn|tk|to|tv|wf|ws|xx|' contains code -%}oc
+{%- elsif '|ar|bo|br|cl|co|ec|fk|gf|gy|py|pe|sr|uy|ve|' contains code -%}sa{%- endif -%}

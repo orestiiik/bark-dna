@@ -1,0 +1,48 @@
+{% if settings.product_available_sizes_enable and settings.product_available_sizes_handle %}
+
+{% for option in product.options %}
+  {% if option == settings.product_available_sizes_handle %}
+    {% assign size_index = forloop.index0 %}
+  {% else %}
+    {% assign other_variant = option %}
+  {% endif %}
+{% endfor %}
+
+  {% if other_variant == blank %}
+
+    <div class="available-sizes">
+
+      {% for variant in product.variants %}
+
+          {% assign sizes = '' %}
+          {% assign sizenostock = '' %}
+
+          {% assign sizes = sizes | append: variant.options[size_index] | append: '_' %}
+          {% assign sizenostock = sizes | append: variant.options[size_index] | append: '_' %}
+
+          {% assign sizesArr = sizes | split: '_' | uniq %}
+          {% assign sizesArrNoStock = sizenostock | split: '_' | uniq %}
+          {% if variant.available %}
+
+            {% for size in sizesArr %}
+              <span class="available-sizes__item">{{ size }}</span>
+            {% endfor %}
+
+          {% else %}
+
+            {% for size in sizesArrNoStock %}
+              <span class="available-sizes__item available-sizes--unavailable">{{ size }}</span>
+            {% endfor %}
+
+          {% endif %}
+
+      {% endfor %}
+
+    </div>
+
+
+  {% endif %}
+
+{% endif %}
+
+{% assign other_variant = blank %}

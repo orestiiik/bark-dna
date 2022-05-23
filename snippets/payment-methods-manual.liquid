@@ -1,0 +1,67 @@
+{% assign manual_payment_methods = '' %}
+{% if settings.enable_method_amazon_payments %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'amazon_payments' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_american_express %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'american_express' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_dankort %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'dankort' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_diners_club %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'diners_club' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_discover %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'discover' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_forbrugsforeningen %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'forbrugsforeningen' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_jcb %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'jcb' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_maestro %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'maestro' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_master %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'master' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_visa %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'visa' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_dwolla %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'dwolla' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_mobilepay %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'mobilepay' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_klarna %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'klarna' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_viabill %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'viabill' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_bitcoin %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'bitcoin' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_dogecoin %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'dogecoin' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_litecoin %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'litecoin' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_apple_pay %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'apple_pay' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_google_pay %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'google_pay' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_paypal %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'paypal' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_ideal %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'ideal' | split: ',' %}
+{% endif %}
+{% if settings.enable_method_bancontact %}
+  {% assign manual_payment_methods = manual_payment_methods | join: ',' | append: ',' | append: 'bancontact' | split: ',' %}
+{% endif %}

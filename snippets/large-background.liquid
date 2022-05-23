@@ -1,0 +1,97 @@
+{% assign video_tag = blank %}
+
+{% capture class %}
+LargeBackground {% if data_settings.section_height != 'normal' %}LargeBackground--{{ data_settings.section_height }}{% endif %} {% if data_settings.content_alignment != 'center' %}LargeBackground--{{ data_settings.content_alignment }}{% endif %} {% if data_settings.show_arrow %}LargeBackground--withScrollButton{% endif %}
+LargeBackground--{{ data_type }}
+{% endcapture %}
+
+{% capture content %}
+<div class="container LargeBackground__Container {% if data_settings.narrow_content %}container--narrow{% endif %}">
+  <div class="SectionHeader SectionHeader--start">
+
+    {% if data_settings.subtitle != blank %}
+      <p class="Heading u-h5 text--subdued">{{ data_settings.subtitle }}</p>
+    {% endif %}
+    {% if data_settings.titleUpper != blank %}
+      <h2 class="SectionHeader__Heading Heading u-h1">
+        {{ data_settings.titleUpper }}
+      </h2>
+    {% endif %}
+    {% if data_settings.titleLower != blank %}
+      <h2 class="SectionHeader__Heading Heading u-h1">
+        {{ data_settings.titleLower }}
+      </h2>
+    {% endif %}
+    {% if data_settings.text != blank %}
+      <div class="Rte">
+        <div class="{% if data_settings.enlarge_text %}enlarge-text{% endif %}">
+          {{ data_settings.text }}
+        </div>
+      </div>
+    {% endif %}
+
+    {%- if data_settings.button_1_text != blank and data_settings.button_2_text != blank -%}
+    {%- assign has_two_buttons = true -%}
+    {%- else -%}
+    {%- assign has_two_buttons = false -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{%- if data_settings.button_1_text != blank or data_settings.button_2_text != blank -%}
+<div class="SectionHeader__ButtonWrapper">
+  <div class="ButtonGroup ButtonGroup--spacingSmall {% if has_two_buttons %}ButtonGroup--sameSize{% endif %}">
+    {%- if data_settings.button_1_text != blank -%}
+    <a href="{{ data_settings.button_1_link }}" class="ButtonGroup__Item Button">{{ data_settings.button_1_text | escape }} <span class="Button__Arrow">{%- render 'icon' with 'arrow_button' -%}</span></a>
+    {%- endif -%}
+
+    {%- if data_settings.button_2_text != blank -%}
+    <a href="{{ data_settings.button_2_link }}" class="ButtonGroup__Item Button">{{ data_settings.button_2_text | escape }}<span class="Button__Arrow">{%- render 'icon' with 'arrow_button' -%}</span></a>
+    {%- endif -%}
+  </div>
+</div>
+{%- endif -%}
+{% endcapture %}
+
+{%- if data_type == 'video' -%}
+  {% capture video_tag %}
+     <video class="LargeBackground__Video medium-down--hide" id="video-{{ data_id }}" muted loop>
+     </video>
+  {% endcapture %}
+{%- endif -%}
+
+<div class="LargeBackground__Wrap flexbox--ie-fix" style="position: relative;">
+  {% include "image-lazyload", of_width: 1, ratio: false, image: data_settings.image, focal: data_settings.alignment, contrast: data_settings.apply_overlay, class: class, content: content, video: video_tag %}
+
+  {%- if data_settings.show_arrow -%}
+    <button data-href="#section-{{ data_id }}-end" class="Slideshow__ScrollButton HeroRoundButton RoundButton--medium" data-animate-bottom>
+      {%- include 'icon' with 'arrow_scroll' -%}
+    </button>
+  {%- endif -%}
+</div>
+
+<span id="section-{{ data_id }}-end" class="Anchor"></span>
+
+{%- if data_settings.video_url != blank -%}
+
+  <script type="text/javascript">
+
+    var video = document.getElementById('video-{{ data_id }}');
+
+    if (!window.mobileCheck()) {
+      video.src = {{ data_settings.video_url | json }};
+      video.load();
+
+      video.addEventListener('loadeddata', function() {
+        $(this).addClass('loaded');
+        this.play();
+      }, false);
+    }
+
+    //
+    // var promise = document.querySelector('video').play();
+    // console.log(promise);
+
+  </script>
+
+{%- endif -%}

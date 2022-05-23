@@ -1,0 +1,29 @@
+  {% if settings.enable_delivery_post_nord %}
+  <li class="HorizontalList__Item">
+    {% include 'icon' with 'postnord' %}
+  </li>
+  {% endif %}
+
+  {% if settings.enable_delivery_gls %}
+  <li class="HorizontalList__Item">
+    {% include 'icon' with 'gls' %}
+  </li>
+  {% endif %}
+
+  {% if settings.enable_delivery_ups %}
+  <li class="HorizontalList__Item">
+    {% include 'icon' with 'ups' %}
+  </li>
+  {% endif %}
+
+  {% if settings.enable_delivery_bring %}
+  <li class="HorizontalList__Item">
+    {% include 'icon' with 'bring' %}
+  </li>
+  {% endif %}
+
+  {% if settings.enable_delivery_dhl %}
+  <li class="HorizontalList__Item">
+    {% include 'icon' with 'dhl' %}
+  </li>
+  {% endif %}

@@ -1,0 +1,78 @@
+<section class="Section Section--spacingNormal Section--snpt" data-section-id="{{ section.id }}" data-section-type="instagram-snpt">
+  {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+    <section class="SectionHeader SectionHeader--center">
+      <div class="container">
+        {%- if section.settings.subheading != blank -%}
+          <h3 class="Section__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="Section__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+      </div>
+    </section>
+  {%- endif -%}
+
+  {%- if section.settings.snpt_code != blank -%}
+  {% if section.settings.full_width == true %}<div class="Snpt__Full">{% endif %}
+    <div class="Snpt__Embed Snpt__Container">
+    {{section.settings.snpt_code}}
+    </div>
+  {% if section.settings.full_width == true %}</div>{% endif %}
+  {%- endif -%}
+
+  {%- if section.settings.button_text != blank -%}
+    <div class="SectionFooter">
+      <a href="{{ section.settings.button_url }}" class="Button Button--primary" target="_blank" rel="noopener">{{ section.settings.button_text | escape }}</a>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Showcase instagram feed",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "@YourStore"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Follow us"
+    },
+    {
+      "type": "text",
+      "id": "snpt_code",
+      "label": "Showcase code",
+      "info": "Copy code from your Showcase gallery install page [Find Showcase code](https://showcase.abovemarket.com/galleries)"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Display full width (no side spacing)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Social media",
+      "name": "Showcase instagram feed",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

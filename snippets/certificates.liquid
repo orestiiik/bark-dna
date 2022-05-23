@@ -1,0 +1,11 @@
+{% if settings.enable_paymenttype_verified_by_visa %}
+<li class="HorizontalList__Item">
+  {% include 'icon' with 'visa-verified' %}
+</li>
+{% endif %}
+
+{% if settings.enable_paymenttype_mastercard %}
+<li class="HorizontalList__Item">
+  {% include 'icon' with 'mastercard-secure' %}
+</li>
+{% endif %}

@@ -1,0 +1,21 @@
+<div class="container container--medium text-{{ block.settings.align_text }}">
+  <div class="grid">
+    <div class="grid__item{% if block.settings.narrow_column %} medium-up--three-quarters medium-up--push-one-eighth{% endif %}">
+      {% if block.settings.subtitle != blank %}
+        <h3 class="Heading {% if block.settings.enlarge_text %}u-h4{% else %}u-h5{% endif %} text--subdued special-page__subheader">{{ block.settings.subtitle }}</h3>
+      {% endif %}
+      {% if block.settings.title != blank %}
+        <h2 class="Heading {% if block.settings.enlarge_text %}u-h1{% else %}u-h1{% endif %} special-page__header">
+          {{ block.settings.title }}
+        </h2>
+      {% endif %}
+      {% if block.settings.text != blank %}
+        <div class="Rte">
+          <div class="{% if block.settings.enlarge_text %}enlarge-text{% endif %}">
+            {{ block.settings.text }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

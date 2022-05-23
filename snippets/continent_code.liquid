@@ -1,0 +1,17 @@
+{%- assign code = continent_code | strip | strip_newlines | strip_html | downcase -%}
+{%- case code -%}
+{%- when 'af' -%}
+Africa
+{%- when 'as' -%}
+Asia
+{%- when 'eu' -%}
+Europe
+{%- when 'na' -%}
+North America
+{%- when 'oc' -%}
+Oceania
+{%- when 'sa' -%}
+South America
+{%- else -%}
+Elsewhere
+{%- endcase -%}

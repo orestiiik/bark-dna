@@ -1,0 +1,151 @@
+{% assign text_column_class = '' %}
+
+{%- if section.settings.content_1 == blank or section.settings.content_2 == blank -%}
+  {% assign text_column_class = 'Grid--center 2/3--tablet-and-up' %}
+{%- else -%}
+  {% assign text_column_class = '1/2--tablet-and-up' %}
+{%- endif -%}
+
+{%- if section.settings.section_border == false -%}
+  <style media="screen">
+    #shopify-section-{{ section.id }} {
+      border-top: none;
+    }
+  </style>
+{%- endif -%}
+
+<section class="Section container--frontpage" id="section-text-columns">
+  {%- capture section_header -%}
+    <header class="SectionHeader text-columns-header Grid__Cell one-whole">
+      {%- if section.settings.subheading != blank -%}
+        <h3 class="SectionHeader__SubHeading Heading SEOHeader__border">{{ section.settings.subheading | escape }}</h3>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="SectionHeader__Heading Heading SEOHeader__border u-h1">{{ section.settings.title | escape }}</h2>
+      {%- endif -%}
+    </header>
+  {%- endcapture -%}
+
+  {%- capture section_text_1 -%}
+    <div class="Grid__Cell text-columns__content {{ text_column_class }}">
+
+      {%- if section.settings.content_1 != blank-%}
+
+        <div class="Rte">
+          {{ section.settings.content_1 }}
+        </div>
+
+      {%- endif -%}
+
+    </div>
+  {%- endcapture -%}
+
+  {%- capture section_text_2 -%}
+    <div class="Grid__Cell text-columns__content {{ text_column_class }}">
+
+      {%- if section.settings.content_2 != blank-%}
+
+        <div class="Rte">
+          {{ section.settings.content_2 }}
+        </div>
+
+      {%- endif -%}
+
+    </div>
+  {%- endcapture -%}
+
+
+  <div class="text-columns-grid">
+    {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+      <div class="text-columns__header-wrap Grid text-{{ section.settings.header_alignment }}">
+        {{ section_header }}
+      </div>
+    {%- endif -%}
+    <div class="text-columns__column-wrap Grid">
+      {%- if section.settings.content_1 != blank -%}
+        {{ section_text_1 }}
+      {%- endif -%}
+      {%- if section.settings.content_2 != blank -%}
+        {{ section_text_2 }}
+      {%- endif -%}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Rich text in columns",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "Sub-heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header alignment",
+      "default": "center",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "content_1",
+      "label": "Column 1",
+      "default": "<p>Add your own custom content to give more information about your store, availability details...</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "content_2",
+      "label": "Column 2",
+      "default": "<p>Add your own custom content to give more information about your store, availability details...</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "section_border",
+      "label": "Section top border",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Rich text in columns",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

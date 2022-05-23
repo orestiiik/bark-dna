@@ -1,0 +1,286 @@
+{%- capture section_settings -%}
+{
+  "type": {{ settings.cart_type | json }},
+  "itemCount": {{ cart.item_count }},
+  "drawer": false,
+  "hasShippingEstimator": {% if section.settings.show_shipping_estimator and cart.item_count > 0 %}true{% else %}false{% endif %}
+}
+{%- endcapture -%}
+
+{% assign cart_total = 0 %}
+
+{%- for item in cart.items -%}
+  {%- include 'module-tax-multiplier', data_product: item -%}
+  {% assign item_price = item.line_price | times: tax_multiplier %}
+  {% assign cart_total = cart_total | plus: item_price %}
+{%- endfor -%}
+
+<section data-section-id="{{ section.id }}" data-section-type="cart" data-section-settings='{{ section_settings }}'>
+  {%- if cart.item_count == 0 -%}
+    <div class="EmptyState">
+      <div class="Container">
+        <h1 class="EmptyState__Title Heading u-h5">{{ 'cart.general.empty' | t }}</h1>
+
+        {%- if settings.cart_show_free_shipping_threshold -%}
+
+
+          {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+          {%- assign cart_total = cart.total_price | times: tax_multiplier -%}
+
+          {%- capture remaining_amount -%}
+          <span>
+            {{ cart_total | minus: threshold_in_cents | abs | money_without_trailing_zeros }}
+          </span>
+          {%- endcapture -%}
+
+          <p class="Text--subdued">{{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}</p>
+        {%- endif -%}
+
+        <a href="{{ routes.all_products_collection_url }}" class="EmptyState__Action Button Button--primary">{{ 'cart.general.empty_button' | t }}</a>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="Container">
+      <header class="PageHeader">
+        <div class="SectionHeader SectionHeader--center">
+          <h1 class="SectionHeader__Heading Heading u-h1">{{ 'cart.general.title' | t }}</h1>
+
+          {%- if settings.cart_show_free_shipping_threshold -%}
+            {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+            {%- assign cart_total = cart.total_price | times: tax_multiplier -%}
+
+            <div class="SectionHeader__Description Text--subdued">
+              {%- if cart_total >= threshold_in_cents -%}
+                <p>{{- 'cart.general.free_shipping' | t -}}</p>
+              {%- else -%}
+              {%- capture remaining_amount -%}
+              <span>
+                {{ cart_total | minus: threshold_in_cents | abs | money_without_trailing_zeros }}
+              </span>
+              {%- endcapture -%}
+              <p>{{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}</p>
+                {%- endif -%}
+              </div>
+          {%- endif -%}
+        </div>
+      </header>
+
+      <div class="PageContent">
+        <form action="{{ routes.cart_url }}" method="POST" class="Cart Cart--expanded" novalidate>
+          <input type="hidden" name="attributes[collection_mobile_items_per_row]" value="">
+          <input type="hidden" name="attributes[collection_desktop_items_per_row]" value="">
+
+          {% render 'cart-items' %}
+
+          <footer class="Cart__Footer">
+            {%- if settings.cart_enable_notes -%}
+              <div class="Cart__NoteContainer">
+                <span class="Cart__NoteButton">{{ 'cart.general.add_note' | t }}</span>
+                <textarea class="Cart__Note Form__Textarea" name="note" id="cart-note" rows="4" placeholder="{{ 'cart.general.note_placeholder' | t }}">{{ cart.note }}</textarea>
+              </div>
+            {%- endif -%}
+
+            <div class="Cart__Recap">
+              {%- capture shipping_and_taxes_notice -%}{{ 'cart.general.shipping_and_taxes_notice' | t }}{%- endcapture -%}
+
+              {%- if cart.cart_level_discount_applications != blank -%}
+                {%- for discount_application in cart.cart_level_discount_applications -%}
+                  <p class="Cart__Discount Heading u-h6">{{ 'cart.general.discount' | t }} ({{ discount_application.title }}): -<span>{{ discount_application.total_allocated_amount | money_without_trailing_zeros }}</span></p>
+                {%- endfor -%}
+              {%- endif -%}
+
+              <span class="Cart__Total Heading u-h6">{{ 'cart.general.total' | t }}: <span data-money-convertible>{{ cart_total | money_without_trailing_zeros }}</span></span>
+
+              {%- if settings.cart_agreement_enable and settings.cart_terms_page != blank -%}
+
+                <div class="Cart__agreement">
+                  <div class="agreement__wrap Rte">
+                    <span class="agreement__input-wrap">
+                      <input type="checkbox" name="cartAgreementCheckbox" id="cartAgreementCheckbox" value="0" class="Form__Checkbox">
+                      {% include 'icon' with 'checkmark' %}
+                      <label for="cartAgreementCheckbox" class="agreement__label">{{ 'cart.general.agree_html' | t: url: pages[settings.cart_terms_page].url }}</label>
+                    </span>
+                  </div>
+                </div>
+
+              {%- endif -%}
+
+              {%- if shipping_and_taxes_notice != blank -%}
+                <p class="Cart__Taxes Text--subdued">{{ shipping_and_taxes_notice }}</p>
+              {%- endif -%}
+
+              <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary Button--full">{{ 'cart.general.checkout' | t }}</button>
+            </div>
+          </footer>
+        </form>
+
+        {% if section.settings.show_certificates != blank or section.settings.show_delivery_methods or section.settings.payment_methods_display != blank %}
+        <div class="Cart__IconsWrapper">
+
+        {% if section.settings.show_delivery_methods != blank or section.settings.show_certificates != blank %}
+        <div class="Footer__Icons Cart__Icons">
+          <ul class="IconList HorizontalList">
+          {% if section.settings.show_certificates != blank %}
+            {% include 'certificates' %}
+          {% endif %}
+
+          {% if section.settings.show_delivery_methods != blank %}
+            {% include 'delivery-methods' %}
+          {% endif %}
+          </ul>
+          {%- if section.settings.payment_methods_display != 'none' -%}
+
+            {% include "payment-methods-manual" %}
+
+            {%- if section.settings.payment_methods_display == 'auto' -%}
+              {% assign payment_methods = shop.enabled_payment_types %}
+            {%- elsif section.settings.payment_methods_display == 'manual' -%}
+              {% assign payment_methods = manual_payment_methods %}
+            {%- endif -%}
+
+            {%- capture payment_methods_icons -%}
+              {%- for type in payment_methods -%}
+                {%- if type != '' -%}
+                  <li class="HorizontalList__Item">
+                  {%- if type == 'mobilepay' -%}
+                    {% include 'icon' with 'mobilepay' %}
+                  {%- else -%}
+                    {{ type | payment_type_svg_tag }}
+                  {%- endif -%}
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endcapture -%}
+
+            {%- if payment_methods_icons != blank -%}
+              <ul class="Footer__PaymentList HorizontalList Cart__PaymentList">
+              {{payment_methods_icons}}
+              </ul>
+            {%- endif -%}
+          {%- endif -%}          
+        </div>
+        {% endif %}
+
+
+
+        </div>
+        {% endif %}
+
+        {%- if section.settings.show_shipping_estimator -%}
+          <div class="Section Section--spacingExtraLarge">
+            <div class="Panel">
+              <h2 class="Panel__Title Heading u-h2">{{ 'cart.shipping_estimator.title' | t }}</h2>
+
+              <div class="Panel__Content">
+                <div class="ShippingEstimator">
+                  <div class="ShippingEstimator__Form">
+                    <div class="ShippingEstimator__Country Form__Select Select Select--primary">
+                      {%- render 'icon' with 'select-arrow' -%}
+                      <select name="country" title="{{ 'cart.shipping_estimator.country' | t }}" data-default="{% if customer %}{{ customer.default_address.country }}{% elsif section.settings.shipping_estimator_default_country != '' %}{{ section.settings.shipping_estimator_default_country }}{% endif %}">{{ all_country_option_tags }}</select>
+                    </div>
+
+                    <div class="ShippingEstimator__Province Form__Select Select Select--primary" style="display: none">
+                      {%- render 'icon' with 'select-arrow' -%}
+                      <select name="province" title="{{ 'cart.shipping_estimator.province' | t }}"></select>
+                    </div>
+
+                    <input type="text" class="ShippingEstimator__Zip Form__Input" name="zip" placeholder="{{ 'cart.shipping_estimator.zip_code' | t }}">
+
+                    <button type="button" class="ShippingEstimator__Submit Button Button--primary">{{ 'cart.shipping_estimator.estimate' | t }}</button>
+                  </div>
+
+                  <div class="ShippingEstimator__Error Alert Alert--error" style="display: none"></div>
+                  <div class="ShippingEstimator__Results">
+                    <div class="ShippingEstimator__ResultsInner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    window.theme.cart();
+  });
+
+</script>
+
+
+{% schema %}
+{
+  "name": "Cart page",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Certificates"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_certificates",
+      "label": "Show Certificates",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Delivery methods"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_delivery_methods",
+      "label": "Show Delivery Methods",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Payment methods"
+    },
+    {
+      "type": "paragraph",
+      "content": "Manually displayed payment methods can be set in Theme Settings"
+    },
+    {
+      "type": "select",
+      "id": "payment_methods_display",
+      "label": "Display payment methods",
+      "options": [
+      {
+        "label": "Hidden",
+        "value": "none"
+      },
+      {
+        "label": "Automatically",
+        "value": "auto"
+      },
+      {
+        "label": "Manually",
+        "value": "manual"
+      }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Shipping rates calculator"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_estimator",
+      "label": "Show shipping rates calculator",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "shipping_estimator_default_country",
+      "label": "Default country to use",
+      "info": "If your customer is logged-in, the country in his default shipping address will be selected.",
+      "default": "United States"
+    }
+  ]
+}
+{% endschema %}

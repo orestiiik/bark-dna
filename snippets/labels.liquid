@@ -1,0 +1,46 @@
+{%- capture product_labels -%}
+  {%- if product.available -%}
+    {%- if product.compare_at_price > product.price -%}
+      <span class="ProductItem__Label Heading text--subdued">{{ 'product.labels.on_sale' | t }}</span>
+    {%- endif -%}
+  {%- else -%}
+    <span class="ProductItem__Label Heading text--subdued">{{ 'product.labels.sold_out' | t }}</span>
+  {%- endif -%}
+
+  {%- if settings.labels_1 != blank -%}
+    {% assign label_tags = label_tags | append: settings.labels_1 %}
+  {%- endif -%}
+  {%- if settings.labels_2 != blank -%}
+    {% assign label_tags = label_tags | append: ',' | append: settings.labels_2 %}
+  {%- endif -%}
+  {%- if settings.labels_3 != blank -%}
+    {% assign label_tags = label_tags | append: ',' | append: settings.labels_3 %}
+  {%- endif -%}
+
+  {% assign label_tags = label_tags | split: ',' %}
+
+  {%- for tag in product.tags -%}
+    {%- if tag contains '__label' -%}
+      <span class="ProductItem__Label Heading text--subdued">{{ tag | split: '__label:' | last }}</span>
+    {%- endif -%}
+
+    {%- for label_tag in label_tags -%}
+      {% assign forloopindex = forloop.index %}
+      {%- if label_tag == tag -%}
+      {% assign label_title = 'labels_page_name_' | append: forloopindex %}
+      <span class="ProductItem__Label Heading text--subdued">
+        {{ settings[label_title] }}
+      </span>
+      {% endif %}
+    {%- endfor -%}
+  {%- endfor -%}
+
+  {% assign label_tags = blank %}
+
+{%- endcapture -%}
+
+{%- if product_labels != blank -%}
+  <div class="ProductItem__LabelList">
+    {{ product_labels }}
+  </div>
+{%- endif -%}

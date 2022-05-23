@@ -1,0 +1,23 @@
+{% assign no_index = "" %}
+
+{%- comment %}Noindex listed pages from editor{% endcomment -%}
+
+{% capture no_index_pages %}
+{{ settings.no_index_pages }}
+{% endcapture %}
+{% assign no_index_pages = no_index_pages | strip_newlines | split: ',' %}
+
+{%- for _page in no_index_pages -%}
+  {%- if _page == page.handle -%}
+    {% assign no_index = true %}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- comment %}Noindex collection variants{% endcomment -%}
+{%- if collection.template_suffix == 'variants' and settings.no_index_collection_variants -%}
+  {% assign no_index = true %}
+{%- endif -%}
+
+{%- if no_index == true -%}
+  <meta name="robots" content="noindex, nofollow">
+{%- endif -%}

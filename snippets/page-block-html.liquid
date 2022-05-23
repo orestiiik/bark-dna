@@ -1,0 +1,17 @@
+<div class="page-block--html">
+  <div class="container container--medium">
+    <div class="grid">
+      <div class="grid__item{% if block.settings.narrow_column %} medium-up--three-quarters medium-up--push-one-eighth{% endif %}">
+        {% if block.settings.html != blank %}
+          {%- if block.settings.html contains 'video' or block.settings.html contains 'watch' -%}
+            <div class="VideoWrapper">
+          {%- endif -%}
+            {{ block.settings.html }}
+          {%- if block.settings.html contains 'video' or block.settings.html contains 'watch' -%}
+          </div>
+          {%- endif -%}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+{% assign width_multiplier = of_width | default: 1 %}
+{% assign width_small = 600 | times: width_multiplier | round: 0 | append: 'x' %}
+{% assign width_medium = 800 | times: width_multiplier | round: 0 | append: 'x' %}
+{% assign width_large = 1200 | times: width_multiplier | round: 0 | append: 'x' %}
+{% assign width_desktop = 1400 | times: width_multiplier | round: 0 | append: 'x' %}
+{% assign width_widescreen = 1600 | times: width_multiplier | round: 0 | append: 'x' %}
+
+{% assign ratio = ratio | default: 'square' %}
+{% assign contrast = contrast | default: false %}
+{% assign focal = focal | default: 'center center' %}
+{% assign class = class | default: blank %}
+{% assign content = content | default: blank %}
+
+{%- if image != blank -%}
+
+<div class="bg-image {{ class }} {% if content != blank %} bg-image--has-content{% endif %}" style="background: url({{ image | img_url: '1x1', format: 'jpg' }});
+{%- if ratio != 'square' and ratio != 'tall' and ratio != 'short' and ratio != false -%}
+ padding-bottom: {{ 100.0 | divided_by: ratio }}%;
+ --aspect-ratio: {{ ratio }};
+{%- endif -%}">
+
+  <div class="bg-image__wrapper Image--lazyLoad Image--fadeIn Image--zoomOut {% unless ratio == false %}AspectRatio AspectRatio--{{ ratio }}{% endunless %} {% if contrast %}Image--contrast{% endif %}"
+       data-optimumx="1.2"
+       data-bgset="{{ image | img_url: width_small, scale: 2 }} [--small] |
+       {{ image | img_url: width_medium, scale: 2 }} [--medium] |
+       {{ image | img_url: width_large, scale: 2 }} [--large] |
+       {{ image | img_url: width_desktop, scale: 2 }} [--desktop] |
+       {{ image | img_url: width_widescreen, scale: 2 }} [--widescreen] |
+       {{ image | img_url: width_medium, scale: 2 }}"
+       data-sizes="auto"
+       style="background-position: {{ focal }};">
+
+       {%- if video != blank -%}
+          {{ video }}
+       {%- endif -%}
+  </div>
+
+  <noscript>
+    <div class="bg-image__wrapper Image--contrast AspectRatio AspectRatio--{{ ratio }}" style="background-image: url({{ image | img_url: width_medium }})"></div>
+  </noscript>
+
+  {%- if content != blank -%}
+    {{ content }}
+  {%- endif -%}
+
+</div>
+
+{%- else -%}
+
+  {%- unless ratio == false -%}
+
+  <div class="AspectRatio AspectRatio--{{ ratio }} AspectRatio--withFallback" style="background: url({{ image | img_url: '1x1', format: 'jpg' }});
+  {%- if ratio != 'square' and ratio != 'tall' and ratio != 'short' and ratio != false -%}
+  padding-bottom: {{ 100.0 | divided_by: ratio }}%;
+  --aspect-ratio: {{ ratio }};
+  {%- endif -%}">
+
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+
+    </div>
+
+  {%- endunless -%}
+
+{%- endif -%}
+
+{% assign image = blank %}
+
+{% assign ratio = blank %}
+{% assign contrast = blank %}
+{% assign focal = blank %}
+{% assign class = blank %}
+{% assign content = blank %}
+{% assign video = blank %}

@@ -1,0 +1,22 @@
+{% include "large-background", data_id: block.id, data_settings: block.settings, data_type: 'image' %}
+
+<style>
+  #page-block-{{ block.id }} .Heading {
+    color: {{ block.settings.text_color }};
+  }
+
+  #page-block-{{ block.id }} .Button {
+    color: {{ block.settings.button_color }};
+    border-color: {{ block.settings.text_color }};
+  }
+
+  #page-block-{{ block.id }} .Button::before {
+    background-color: {{ block.settings.text_color }};
+  }
+
+  @media (-moz-touch-enabled: 0), (hover: hover) {
+    #page-block-{{ block.id }} .Button:hover {
+      color: {{ block.settings.text_color }};
+    }
+  }
+</style>

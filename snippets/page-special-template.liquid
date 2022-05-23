@@ -1,0 +1,59 @@
+{% if section.blocks.first.type == "background-image-text" %}
+  {% assign has_hero = true %}
+{% endif %}
+
+{% assign header_title = section.settings.title | default: page.title %}
+{% assign header_intro = section.settings.intro | default: page.content %}
+
+{%- if section.settings.back_link != blank -%}
+  {% include "breadcrumb-bar", data_back_link: section.settings.back_link, data_back_title: section.settings.back_title, data_current: page %}
+{%- endif -%}
+
+{%- if section.settings.header_enable -%}
+  {%- if section.settings.header_image -%}
+    <div class="flexbox--ie-fix">
+    <header class="PageHeader PageHeader--withBackground {% if section.settings.header_image_size != 'normal' %}PageHeader--{{ section.settings.header_image_size }}{% endif %}" style="background: url({{ section.settings.header_image | img_url: '1x1', format: 'jpg' }})">
+      <div class="PageHeader__ImageWrapper Image--lazyLoad Image--fadeIn Image--contrast"
+           data-optimumx="1.2"
+           data-bgset="{{ section.settings.header_image | img_url: '600x' }} 600w, {{ section.settings.header_image | img_url: '800x' }} 800w, {{ section.settings.header_image | img_url: '1200x' }} 1200w, {{ section.settings.header_image | img_url: '1400x' }} 1400w, {{ section.settings.header_image | img_url: '1600x' }} 1600w">
+      </div>
+
+      <noscript>
+        <div class="PageHeader__ImageWrapper Image--contrast" style="background-image: url({{ section.settings.header_image | img_url: '800x' }})"></div>
+      </noscript>
+
+      <div class="container">
+        <div class="SectionHeader SectionHeader--center">
+          <h1 class="SectionHeader__Heading Heading u-h1">
+            {{ header_title }}
+          </h1>
+
+          {%- if header_intro != blank -%}
+            <div class="SectionHeader__Description Rte">
+              {{- header_intro -}}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </header>
+    </div>
+  {%- else -%}
+    <header class="PageHeader">
+      <div class="container">
+        <div class="SectionHeader SectionHeader--center">
+          <h1 class="SectionHeader__Heading Heading u-h1">
+            {{ header_title }}
+          </h1>
+
+          {%- if header_intro != blank -%}
+            <div class="SectionHeader__Description Rte">
+              {{- header_intro -}}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </header>
+  {%- endif -%}
+{%- endif -%}
+
+{% include 'page-template-blocks' %}

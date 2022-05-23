@@ -1,0 +1,402 @@
+{% assign current_path = canonical_url | remove_first: shop.url %}
+
+{% if section.settings.mode != 'disabled' and section.blocks.size > 0 %}
+
+{%- if section.settings.block_type == 'stores' -%}
+
+{% capture countries %}
+[{% for country in section.blocks %}
+  {%- comment -%}
+    Create url with protocol and current path
+  {%- endcomment -%}
+  {%- assign url_with_protocol = country.settings.domain | prepend: 'https://' | append: current_path | append: '?switch' -%}
+  {
+    "country_code": {{ country.settings.country_code | json }},
+    "current": {{ country.settings.current | json }},
+    "default": {{ country.settings.default | json }},
+    "url": {{ url_with_protocol | json }},
+    "domain": {{ country.settings.domain | json }},
+    "currency": {{ country.settings.currency | json }},
+    "id": {{ country.id | json }},
+    "title": {{ country.settings.title | json }},
+    "img": {{ country.settings.flag | img_url: '64x' | json }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}]
+{% endcapture %}
+
+{%- else -%}
+
+{% capture countries %}
+[{% for region in section.blocks %}
+
+  {%- assign country_codes = region.settings.country_codes | strip_newlines | remove: ' ' | remove: '\n' -%}
+  {%- assign region_countries = country_codes | split: ',' -%}
+  {%- assign url_with_protocol = region.settings.domain | prepend: 'https://' | append: current_path | append: '?switch' -%}
+  {%- for country in region_countries -%}
+  {
+    "country_code": {{ country | json }},
+    "continent_code": "{% include 'country_in_continent' with country %}",
+    "current": {{ region.settings.current | json }},
+    "default": {{ region.settings.default | json }},
+    "url": {{ url_with_protocol | json }},
+    "domain": {{ region.settings.domain | json }},
+    "currency": {{ region.settings.currency | json }},
+    "id": {{ region.id | json }},
+    "title": "{% include 'country_code' with country %}"
+  }{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}{% unless forloop.last %},{% endunless %}
+  {% endfor %}]
+{% endcapture %}
+
+{%- endif -%}
+
+{% capture switch_template %}
+{% raw %}
+<button class="switcher-button" tabindex="0" onclick="window.openshopswitch()">
+  <div class="switcher-button__text u-h8">
+    {{currentCurrency}}
+  </div>
+  {% endraw %}{%- include 'icon' with 'select-arrow' -%}{% raw %}
+</button>
+{% endraw %}
+{% endcapture %}
+
+{% capture country_template %}
+{% raw %}
+<div class="shop-switch__country" data-country="{{ country.title }}">
+  <a href="{{ country.url }}" data-country="{{ country.country_code }}">{{ country.title }}</a>
+</div>
+{% endraw %}
+{% endcapture %}
+
+<div
+id="ShopSwitch-{{ section.id }}"
+class="modal modal--square modal--mobile-friendly"
+data-section-id="{{ section.id }}"
+data-section-type="shop-switch"
+data-delay-days="{{ section.settings.popup_days }}"
+data-delay-seconds="{{ section.settings.popup_seconds }}"
+data-countries='{{ countries }}'
+data-test-mode="{% if section.settings.mode == 'testing' %}true{% else %}false{% endif %}"
+data-mode="{{ section.settings.mode }}"
+data-block-type="{{ section.settings.block_type }}"
+data-switcher-template="{{ switch_template | escape }}"
+data-country-template="{{ country_template | escape }}"
+data-switcher-enable="{{ section.settings.switcher_enable }}"
+data-cookie-name="shop-switch-{{ shop.email | split: '@' | last | split: '.' | first | handlize }}"
+data-sort-countries="{{ section.settings.region_countries_sort | json }}"
+data-api-url="https://api.ipstack.com/check?access_key={{ settings.api_ipstack }}"
+>
+<div class="modal__inner">
+
+  {%- if section.settings.block_type == 'stores' -%}
+  <div class="modal__centered medium-up--text-center">
+    <div class="modal__centered-content">
+
+      <div class="shop-switch shop-switch__stores">
+
+        {% if section.settings.popup_image %}
+        <div class="image-wrap hidden-phone" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.popup_image.aspect_ratio }}%;">
+          {%- assign img_url = section.settings.popup_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload lazypreload" role="presentation"
+          data-src="{{ img_url }}"
+          data-widths="[540, 720, 900, 1080]"
+          data-aspectratio="{{ section.settings.popup_image.aspect_ratio }}"
+          data-sizes="auto"
+          alt="{{ section.settings.popup_image.alt }}">
+        </div>
+        {% endif %}
+
+        <div class="modal-text">
+
+          {% if section.settings.popup_title != blank %}
+          <h5 class="shop-switch__heading Text--alignCenter Heading u-h4">{{ section.settings.popup_title }}</h5>
+          {% endif %}
+
+          {% if section.settings.popup_subtitle != blank %}
+          <p class="modal-subtitle shop-switch__subtitle Text--alignCenter Heading u-h8 Text--subdued">{{ section.settings.popup_subtitle }}</p>
+          {% endif %}
+
+
+          <div class="countries-list">
+
+            {%- for block in section.blocks -%}
+
+            {% assign block_url = "https://" | append: block.settings.domain | append: current_path %}
+
+            <a class="countries-list__item" id="{{ block.id }}" {{ block.shopify_attributes }} href="{{ block_url }}?switch" target="_self">
+              {% if block.settings.flag != blank %}
+              <div class="countries-list__flag">
+                <img class="Image--lazyLoad" src="{{ block.settings.flag | img_url: '1x1', crop: 'center' }}" data-src="{{ block.settings.flag | img_url: '80x80', crop: 'center' }}" alt="{{ block.settings.title }}">
+              </div>
+              {% endif %}
+
+              <div class="countries-list__cta Heading u-h6">
+                {{ block.settings.title }} <small>({{ block.settings.currency }})</small>
+              </div>
+
+            </a>
+            {%- endfor -%}
+
+          </div>
+
+
+        </div>
+
+        <div class="shop-switch__dismiss Text--alignCenter">
+          <button type="button" class="Link Link--underline js-modal-close">{{ section.settings.close_text }}</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  {%- else -%}
+
+  <div class="modal__centered">
+    <div class="modal__centered-content">
+
+      {% if section.settings.popup_title != blank %}
+      <h2 class="Heading u-h1 large-up--text-center shop-switch__heading">{{ section.settings.popup_title }}</h2>
+      {% endif %}
+
+      {% assign continents = 'af,as,eu,na,oc,sa' | split: ',' %}
+
+      <div class="shop-switch shop-switch__regions">
+
+        {%- for continent in continents -%}
+          <div class="shop-switch__continent continent--empty" data-continent="{{ continent }}" >
+            <h4 class="Heading u-h5 continent__header">{% include 'continent_code' with continent %}</h4>
+            <div class="continent__countries">
+
+            </div>
+          </div>
+        {%- endfor -%}
+
+      </div>
+
+      <div class="large-up--text-center shop-switch__dismiss">
+        <button type="button" class="Link Link--underline js-modal-close">{{ section.settings.close_text }}</button>
+      </div>
+
+    </div>
+  </div>
+
+  {%- endif -%}
+
+  <button type="button" class="modal__close js-modal-close Icon-Wrapper" title="{{ 'general.accessibility.close_modal' | t }}">
+    {% include 'icon' with 'close' %}
+  </button>
+
+</div>
+
+</div>
+
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Shop Switch",
+  "settings": [
+  {
+    "type": "select",
+    "id": "mode",
+    "label": "Mode",
+    "default": "disabled",
+    "options": [
+    {
+      "value": "enabled",
+      "label": "Enable popup"
+    },
+    {
+      "value": "testing",
+      "label": "Test popup"
+    },
+    {
+      "value": "redirect",
+      "label": "Redirect"
+    },
+    {
+      "value": "disabled",
+      "label": "Disabled"
+    }
+    ],
+    "info": "Test mode displays your popup each time even after dismissing it. Switch to 'Enable popup' once you are happy with how your popup looks."
+  },
+  {
+    "type": "select",
+    "id": "block_type",
+    "label": "Block type ",
+    "default": "stores",
+    "options": [
+      {
+        "value": "stores",
+        "label": "Stores"
+      },
+      {
+        "value": "regions",
+        "label": "Regions"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "switcher_enable",
+    "label": "Enable switcher button",
+    "default": true,
+    "info": "Adds a trigger for opening the shop switch popup"
+  },
+  {
+    "type": "range",
+    "id": "popup_seconds",
+    "label": "Delay",
+    "info": "The delay is disabled in the theme editor so you can see it immediately",
+    "default": 5,
+    "min": 2,
+    "max": 60,
+    "step": 1,
+    "unit": "sec"
+  },
+  {
+    "type": "range",
+    "id": "popup_days",
+    "label": "Frequency",
+    "default": 30,
+    "info": "Number of days before a dismissed popup reappears",
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "unit": "day"
+  },
+  {
+    "type": "text",
+    "id": "popup_title",
+    "label": "Heading",
+    "default": "Are you in the right place?"
+  },
+  {
+    "type": "text",
+    "id": "close_text",
+    "label": "Close button text",
+    "default": "I'll stay"
+  },
+  {
+    "type": "header",
+    "content": "Regions"
+  },
+  {
+    "type": "checkbox",
+    "id": "region_countries_sort",
+    "label": "Sort region countries",
+    "default": true,
+    "info": "Sorts countries by english country name"
+  }
+  ],
+  "blocks": [
+  {
+    "type": "store",
+    "name": "Store",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "flag",
+      "label": "Flag image",
+      "info": "Download image [here](https://github.com/hjnilsson/country-flags/tree/master/png1000px)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Country name",
+      "placeholder": "Eg. Canada"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Write something about the store...</p>"
+    },
+    {
+      "type": "text",
+      "id": "demonym",
+      "label": "Demonym",
+      "placeholder": "Eg. Canadian"
+    },
+    {
+      "type": "text",
+      "id": "country_code",
+      "label": "Country code",
+      "info": "Use country codes in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) format"
+    },
+    {
+      "type": "text",
+      "id": "currency",
+      "label": "Currency code",
+      "info": "Use currency codes in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) format"
+    },
+    {
+      "type": "text",
+      "id": "domain",
+      "label": "Primary Domain",
+      "placeholder": "example.com",
+      "info": "Your private domain is set in [your 'Domains' settings](/admin/settings/domains)"
+    },
+    {
+      "type": "checkbox",
+      "label": "This is the default store",
+      "id": "default",
+      "info": "NOTE: Make sure that the default is the same on every instance of the store."
+    },
+    {
+      "type": "checkbox",
+      "label": "This is the current store",
+      "id": "current"
+    }
+    ]
+  },
+  {
+    "type": "region",
+    "name": "Region",
+    "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Name"
+    },
+    {
+      "type": "html",
+      "id": "country_codes",
+      "placeholder": "DK,NO,SE",
+      "label": "Country codes",
+      "info": "Use country codes in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) format. See country codes and continents [here](https://datahub.io/JohnSnowLabs/country-and-continent-codes-list#data). Separate with comma."
+    },
+    {
+      "type": "text",
+      "id": "currency",
+      "label": "Currency code",
+      "info": "Use currency codes in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) format"
+    },
+    {
+      "type": "text",
+      "id": "domain",
+      "label": "Primary Domain",
+      "placeholder": "example.com",
+      "info": "Your private domain is set in [your 'Domains' settings](/admin/settings/domains)"
+    },
+    {
+      "type": "checkbox",
+      "label": "This is the default store",
+      "id": "default",
+      "info": "NOTE: Make sure that the default is the same on every instance of the store."
+    },
+    {
+      "type": "checkbox",
+      "label": "This is the current store",
+      "id": "current"
+    }
+    ]
+  }
+  ]
+}
+{% endschema %}

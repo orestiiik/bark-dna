@@ -1,0 +1,47 @@
+{%- case block.settings.width -%}
+  {%- when 'container' -%}
+    {% assign wrapper_class = 'container' %}
+  {%- when 'narrow' -%}
+    {% assign wrapper_class = 'container container--narrow' %}
+  {%- when 'tiny' -%}
+    {% assign wrapper_class = 'container container--extraNarrow' %}
+  {% else %}
+    {% assign wrapper_class = ' ' %}
+{%- endcase -%}
+
+<div class="{{ wrapper_class }}">
+
+  {% capture video_button %}
+    <button type="button" class="Video__PlayButton" data-action="open-modal" aria-label="{{ 'home_page.featured_video.play' | t }}" aria-controls="modal-{{ block.id }}">
+      {% include 'icon' with 'play' %}
+    </button>
+  {% endcapture %}
+
+  {% include "image-lazyload", image: block.settings.image, ratio: block.settings.image.aspect_ratio, content: video_button %}
+
+</div>
+
+
+<div id="modal-{{ block.id }}" class="Modal Modal--fullScreen Modal--videoContent" aria-hidden="true" role="dialog" data-scrollable>
+  <div class="Modal__Content">
+    <div class="container container--desktop">
+      <div class="VideoWrapper">
+        {% if block.settings.video_url.type == 'youtube' %}
+          <iframe class="Image--lazyLoad" data-src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?autoplay=1&showinfo=0&controls=1&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+          {% elsif block.settings.video_url.type == 'vimeo' %}
+          <iframe class="Image--lazyLoad" data-src="//player.vimeo.com/video/{{ block.settings.video_url.id }}?autoplay=1&portrait=0&byline=0&color={{ settings.accent_color | remove_first: '#' }}" frameborder="0"></iframe>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <button class="Modal__Close Modal__Close--outside" data-animate-bottom data-action="close-modal">{% include 'icon' with 'close' %}</button>
+</div>
+
+<style media="screen">
+
+  #page-block-{{ block.id }} .Video__PlayButton {
+    color: {{ block.settings.icon_color }};
+  }
+
+</style>

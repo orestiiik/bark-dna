@@ -1,0 +1,222 @@
+<section id="section-{{ section.id }}" data-section-id="{{ section.id }}" >
+  {% include "large-background", data_id: section.id, data_settings: section.settings, data_type: 'image' %}
+</section>
+
+<style>
+  #section-{{ section.id }} .Heading{
+    color: {{ section.settings.text_color }};
+  }
+
+  #section-{{ section.id }} .Button {
+    color: {{ section.settings.button_color }};
+    border-color: {{ section.settings.text_color }};
+  }
+
+  #section-{{ section.id }} .Button::before {
+    background-color: {{ section.settings.text_color }};
+  }
+
+  @media (-moz-touch-enabled: 0), (hover: hover) {
+    #section-{{ section.id }} .Button:hover {
+      color: {{ section.settings.text_color }};
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Large image background",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "titleUpper",
+        "label": "Upper Title",
+        "default": "Large image with text"
+      },
+      {
+        "type": "text",
+        "id": "titleLower",
+        "label": "Lower Title",
+        "default": "Large image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "Image focal point",
+        "info": "Used to keep the subject of your photo in view.",
+        "default": "center",
+        "options": [
+          {
+            "value": "top left",
+            "label": "Top left"
+          },
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "top right",
+            "label": "Top right"
+          },
+          {
+            "value": "center left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Middle"
+          },
+          {
+            "value": "center right",
+            "label": "Right"
+          },
+          {
+            "value": "bottom left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          },
+          {
+            "value": "bottom right",
+            "label": "Bottom right"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "show_arrow",
+        "label": "Show bottom arrow",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Button 1"
+      },
+      {
+        "type": "text",
+        "id": "button_1_text",
+        "label": "Button 1 label"
+      },
+      {
+        "type": "url",
+        "id": "button_1_link",
+        "label": "Button 1 link"
+      },
+      {
+        "type": "header",
+        "content": "Button 2"
+      },
+      {
+        "type": "text",
+        "id": "button_2_text",
+        "label": "Button 2 label"
+      },
+      {
+        "type": "url",
+        "id": "button_2_link",
+        "label": "Button 2 link"
+      },
+      {
+        "type": "header",
+        "content": "Sizing"
+      },
+      {
+        "type": "select",
+        "id": "section_height",
+        "label": "Section height",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "fullscreen",
+            "label": "Fullscreen"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "select",
+        "id": "content_alignment",
+        "label": "Content alignment",
+        "default": "center",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "center",
+            "label": "Middle"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "narrow_content",
+        "label": "Narrow content",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "checkbox",
+        "id": "apply_overlay",
+        "label": "Apply overlay on image",
+        "info": "This can improve text visibility.",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button text",
+        "default": "#363636"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Image",
+        "name": "Large image background",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

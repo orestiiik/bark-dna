@@ -1,0 +1,58 @@
+<div id="instagram-shop" class="">
+  <header class="instagram__header PageHeader {% unless section.settings.full_width %}PageContent{% endunless %}">
+
+    <div class="instagram__header--inner">
+
+        <div class="instagram__username">
+          <a href="https://instagram.com/{{ section.settings.username }}">@{{ section.settings.username }}</a>
+        </div>
+
+        <div class="SectionHeader SectionHeader--center">
+          <h1 class="SectionHeader__Heading Heading u-h1">{{ page.title }}</h1>
+        </div>
+
+        <div class="instagram__hashtag">
+          <a href="https://www.instagram.com/explore/tags/{{ section.settings.hashtag }}">#{{ section.settings.hashtag }}</a>
+        </div>
+
+    </div>
+
+  </header>
+
+  <div class="instagram__grid {% unless section.settings.full_width %}PageContent{% endunless %}">
+		{% if section.settings.embed != blank %}
+			{{ section.settings.embed }}
+		{% endif %}
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Instagram Shop",
+	"settings": [
+		{
+			"type": "checkbox",
+			"id": "full_width",
+			"label": "Full width page"
+		},
+		{
+			"type": "text",
+			"id": "username",
+			"label": "Instagram username"
+		},
+		{
+			"type": "text",
+			"id": "hashtag",
+			"label": "Instagram hashtag"
+		},
+		{
+			"type": "textarea",
+			"id": "embed",
+			"label": "Snapppt instagram script",
+      "info": "Generate embed code from [Snapppt](https://snapppt.com/embeds)"
+		}
+	]
+}
+{% endschema %}

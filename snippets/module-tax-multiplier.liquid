@@ -1,0 +1,19 @@
+{% comment %}
+  Tax multiplier
+{% endcomment %}
+
+{%- assign _product = data_product -%}
+
+{%- assign tax_percentage = settings.tax_multiplier_amount | times: 1.0 | divided_by: 100 | plus: 1 -%}
+
+{%- if _product.taxable or _product.variants[0].taxable -%}
+  {%- assign is_taxable = true -%}
+{%- endif -%}
+
+{%- if settings.tax_multiplier_enable and is_taxable -%}
+  {%- assign tax_multiplier = tax_percentage -%}
+{%- elsif settings.tax_multiplier_enable and _product == blank -%}
+  {%- assign tax_multiplier = tax_percentage -%}
+{%- else -%}
+  {%- assign tax_multiplier = 1 -%}
+{%- endif -%}

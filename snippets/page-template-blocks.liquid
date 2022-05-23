@@ -1,0 +1,54 @@
+<div class="page-blocks">
+  {% for block in section.blocks %}
+    <div class="page-block page-block--{{ block.type }}" id="page-block-{{ block.id }}" {{ block.shopify_attributes }}>
+      {% case block.type %}
+
+        {% when 'spacing' %}
+          {% include 'page-block-spacing' %}
+
+        {% when 'contact-form' %}
+          {% include 'page-block-contact-form' %}
+
+        {% when 'background-image-text' %}
+          {% include 'page-block-background-image-text' %}
+
+        {% when 'image-row' %}
+          {% include 'page-block-image-row' %}
+
+        {% when 'rich-text'%}
+          {% include 'page-block-rich-text' %}
+
+        {% when 'text-and-image' %}
+          {% include 'page-block-text-and-image' %}
+
+        {% when 'text-columns-images' %}
+          {% include 'page-block-text-columns-images' %}
+
+        {% when 'text-columns' %}
+          {% include 'page-block-text-columns' %}
+
+        {% when 'html' %}
+          {% include 'page-block-html' %}
+
+        {% when 'basic-text-image' %}
+          {% include 'page-block-basic-text-image' %}
+
+        {% when 'newsletter' %}
+          {% include 'page-block-newsletter' %}
+
+        {% when 'large-image-background' %}
+          {% include 'page-block-large-image-background' %}
+
+        {% when 'large-video-background' %}
+          {% include 'page-block-large-video-background' %}
+
+        {% when 'featured-video' %}
+          {% include 'page-block-featured-video' %}
+
+        {% when 'featured-collections' %}
+          {% include 'page-block-featured-collections' %}
+
+      {% endcase %}
+    </div>
+  {% endfor %}
+</div>

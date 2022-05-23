@@ -1,0 +1,64 @@
+{%- if section.settings.enable_bar -%}
+<section id="section-{{ section.id }}" data-section-id="{{ section.id }}" >
+  <div class="marquee">
+    {{ section.settings.text }}
+  </div>
+</section>
+
+<style>
+  #section-{{ section.id }} {
+    background: {{ section.settings.background }};
+    color: {{ section.settings.text_color }};
+  }
+</style>
+
+<script>
+$(function () {
+  $('.marquee').marquee({
+    speed: 100,
+    duplicated: true,
+    startVisible: true,
+    gap: 10
+  });
+});
+</script>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Marquee",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar",
+      "label": "Enable bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+  {
+    "category": "Advanced",
+    "name": "Marquee",
+    "settings": {}
+  }
+  ]
+}
+{% endschema %}

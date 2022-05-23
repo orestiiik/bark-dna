@@ -1,0 +1,148 @@
+{% capture remove_whitespace %}
+<style>
+  .basic-block--{{ block.id }} .basic-block__image {
+    height: {{ block.settings.section_height }};
+  }
+  .basic-block--{{ block.id }} .basic-block__ImageWrapper {
+    background-position: {{ block.settings.alignment }};
+  }
+  .basic-block--{{ block.id }} .basic-block__text {
+    height: {{ block.settings.section_height }};
+    text-align: {{ block.settings.align_text }};
+  }
+  @media screen and (max-width: 590px) {
+    .basic-block--{{ block.id }} {
+      background: {{ block.settings.color_border }};
+    }
+    {%- if block.settings.mobile_image_pos == 'after' or block.settings.mobile_image_pos == 'before' -%}
+      .basic-block--{{ block.id }} .basic-block__text {
+        height: auto;
+      }
+      .basic-block--{{ block.id }} .basic-block__image {
+        height: {{ block.settings.mobile_height }};
+      }
+      .basic-block--{{ block.id }} .basic-block__text.text-middle .basic-block__text-inner,
+      .basic-block--{{ block.id }} .basic-block__text.text-bottom .basic-block__text-inner {
+        position: relative;
+        top: auto;
+        left: auto;
+        bottom: auto;
+        transform: none;
+      }
+    {%- else -%}
+      .basic-block--{{ block.id }} .basic-block__image, .basic-block--{{ block.id }} .basic-block__text {
+        height: {{ block.settings.mobile_height }};
+      }
+    {%- endif -%}
+  }
+</style>
+{%- capture image_block_desktop -%}
+  <div class="Grid__Cell 1/2--tablet-and-up hidden-phone">
+    <div class="basic-block__image"  {%- if block.settings.image != blank -%}style="background-image: url({{ block.settings.image | img_url: '1x1', format: 'jpg' }})"{%- endif -%}>
+    {%- if block.settings.image != blank -%}
+    <div class="basic-block__ImageWrapper Image--lazyLoad Image--fadeIn "
+         data-optimumx="1.2"
+         data-bgset="{{ block.settings.image | img_url: '600x' }} 600w, {{ block.settings.image | img_url: '800x' }} 800w, {{ block.settings.image | img_url: '1200x' }} 1200w, {{ block.settings.image | img_url: '1400x' }} 1400w, {{ block.settings.image | img_url: '1600x' }} 1600w">
+    </div>
+    {%- endif -%}
+
+    {%- if block.settings.image == blank -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+    </div>
+  </div>
+{%- endcapture -%}
+{%- capture image_block_desktop_2 -%}
+  <div class="Grid__Cell 1/2--tablet-and-up hidden-phone">
+    <div class="basic-block__image"  {%- if block.settings.image != blank -%}style="background-image: url({{ block.settings.image_2 | img_url: '1x1', format: 'jpg' }})"{%- endif -%}>
+    {%- if block.settings.image_2 != blank -%}
+    <div class="basic-block__ImageWrapper Image--lazyLoad Image--fadeIn "
+         data-optimumx="1.2"
+         data-bgset="{{ block.settings.image_2 | img_url: '600x' }} 600w, {{ block.settings.image_2 | img_url: '800x' }} 800w, {{ block.settings.image_2 | img_url: '1200x' }} 1200w, {{ block.settings.image_2 | img_url: '1400x' }} 1400w, {{ block.settings.image_2 | img_url: '1600x' }} 1600w">
+    </div>
+    {%- endif -%}
+
+    {%- if block.settings.image == blank -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+    </div>
+  </div>
+{%- endcapture -%}
+{%- capture image_block_mobile -%}
+  <div class="Grid__Cell {% if block.settings.mobile_image_pos contains 'peek' %}1/2--phone{% endif %} 1/2--tablet-and-up hidden-tablet-and-up">
+    <div class="basic-block__image" {%- if block.settings.image != blank -%}style="background-image: url({{ block.settings.image | img_url: '1x1', format: 'jpg' }})"{%- endif -%}>
+    {%- if block.settings.image != blank -%}
+    <div class="basic-block__ImageWrapper Image--lazyLoad Image--fadeIn "
+         data-optimumx="1.2"
+         data-bgset="{{ block.settings.image | img_url: '600x' }} 600w, {{ block.settings.image | img_url: '800x' }} 800w, {{ block.settings.image | img_url: '1200x' }} 1200w, {{ block.settings.image | img_url: '1400x' }} 1400w, {{ block.settings.image | img_url: '1600x' }} 1600w">
+    </div>
+    {%- endif -%}
+    {%- if block.settings.image == blank -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+    </div>
+  </div>
+{%- endcapture -%}
+{%- capture image_block_mobile_2 -%}
+  <div class="Grid__Cell {% if block.settings.mobile_image_pos contains 'peek' %}1/2--phone{% endif %} 1/2--tablet-and-up hidden-tablet-and-up">
+    <div class="basic-block__image basic-block__image-2" {%- if block.settings.image_2 != blank -%}style="background-image: url({{ block.settings.image_2 | img_url: '1x1', format: 'jpg' }})"{%- endif -%}>
+    {%- if block.settings.image_2 != blank -%}
+    <div class="basic-block__ImageWrapper Image--lazyLoad Image--fadeIn "
+         data-optimumx="1.2"
+         data-bgset="{{ block.settings.image_2 | img_url: '600x' }} 600w, {{ block.settings.image_2 | img_url: '800x' }} 800w, {{ block.settings.image_2 | img_url: '1200x' }} 1200w, {{ block.settings.image_2 | img_url: '1400x' }} 1400w, {{ block.settings.image_2 | img_url: '1600x' }} 1600w">
+    </div>
+    {%- endif -%}
+    {%- if block.settings.image_2 == blank -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+    </div>
+  </div>
+{%- endcapture -%}
+{%- if block.settings.image != blank -%}
+<div class="basic-block Grid basic-block--{{ block.id }} basic-block--{{ block.settings.section_height }} loaded">
+  {%- if block.settings.image_pos == 'left' -%}
+    {{ image_block_desktop }}
+  {%- endif -%}
+  {%- if block.settings.mobile_image_pos == 'before' or block.settings.mobile_image_pos == 'peek_left' -%}
+    {{ image_block_mobile }}
+  {%- endif -%}
+  {%- if block.settings.image_2 != blank -%}
+    {{ image_block_mobile_2 }}
+    {{ image_block_desktop_2 }}
+  {%- else -%}
+  {%- if block.settings.subtitle != blank or block.settings.title != blank or block.settings.text != blank -%}
+    <div class="Grid__Cell 1/2--tablet 1/2--lap-and-up">
+      <div class="basic-block__inner">
+        <div class="basic-block__text larger-text text-{{ block.settings.align_text_vertical }}">
+          <div class="basic-block__text-inner">
+            {%- if block.settings.subtitle != blank -%}
+              <p class="Heading Text--subdued page-block-subheading">{{ block.settings.subtitle }}</p>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <h2 class="Heading {{ block.settings.heading_type }} page-block-heading">{{ block.settings.title }}</h2>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <div class="basic-block__subtext">{{ block.settings.text }}</div>
+            {%- endif -%}
+            {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+            <br>
+              <a href="{{ block.settings.button_link }}" class="Button Button--secondary">
+                {{ block.settings.button_label }}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+  {%- endif -%}
+
+  {%- if block.settings.image_pos == 'right' -%}
+    {{ image_block_desktop }}
+  {%- endif -%}
+  {%- if block.settings.mobile_image_pos == 'after' or block.settings.mobile_image_pos == 'peek_right' -%}
+    {{ image_block_mobile }}
+  {%- endif -%}
+</div>
+{%- endif -%}
+{% endcapture %}{{ remove_whitespace | strip_newlines | replace:'	','' | replace:'    ','' | replace:'  ',' ' }}

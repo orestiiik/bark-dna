@@ -1,0 +1,36 @@
+{%- if data_current != blank and data_back_link != blank -%}
+
+{% assign back_link_handle = data_back_link | split: '/' | last %}
+
+{%- if data_back_title != blank -%}
+  {% assign back_title = data_back_title %}
+{%- elsif collections[back_link_handle].title != blank -%}
+  {% assign back_title = collections[back_link_handle].title %}
+{%- elsif pages[back_link_handle].title != blank -%}
+  {% assign back_title = pages[back_link_handle].title %}
+{%- elsif blogs[back_link_handle].title != blank -%}
+  {% assign back_title = blogs[back_link_handle].title %}
+{%- endif -%}
+
+<div class="breadcrumb-bar position-before hidden-phone">
+  <div class="breadcrumb-wrap">
+    <ol class="breadcrumb-bar__inner" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li class="breadcrumb-bar__item" itemprop="itemListElement" itemscope
+    itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="{{ data_back_link }}" >
+          <span itemprop="name" class="Heading u-h8">{{ back_title }}</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li class="breadcrumb-bar__item breadcrumb-bar--inactive" itemprop="itemListElement" itemscope
+    itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="{{ data_current.url }}">
+          <span itemprop="name" class="Heading text--subdued u-h7">{{ data_current.title }}</span>
+        </a>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+  </div>
+</div>
+
+{%- endif -%}
