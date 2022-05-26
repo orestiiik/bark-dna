@@ -6040,6 +6040,22 @@
       "1653600915f04e146d": {
         "type": "hero-video",
         "settings": {
+          "subtitle": "RENS I MATTÈR I FUGT I BOOST",
+          "titleUpper": "fuldfør det",
+          "titleLower": "perfekte look",
+          "text": "",
+          "alignment": "center",
+          "show_arrow": false,
+          "button_1_text": "shop",
+          "button_1_link": "",
+          "button_2_text": "boost dit look på 2 min.",
+          "button_2_link": "",
+          "section_height": "normal",
+          "content_alignment": "center",
+          "narrow_content": false,
+          "apply_overlay": true,
+          "text_color": "#ffffff",
+          "button_color": "#363636"
         }
       }
     },
