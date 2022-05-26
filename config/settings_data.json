@@ -733,14 +733,6 @@
           "back_title": ""
         }
       },
-      "1620650422435db212": {
-        "type": "background-video",
-        "disabled": true,
-        "settings": {
-          "section_size": "large",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=xgb5R-tsxYA"
-        }
-      },
       "page-special-02": {
         "type": "page-special-02",
         "blocks": {
@@ -3536,18 +3528,6 @@
           "button_color": "#363636"
         }
       },
-      "163480936973f4b79a": {
-        "type": "text-with-image",
-        "disabled": true,
-        "settings": {
-          "subheading": "boost dit look",
-          "title": "",
-          "image_position": "right",
-          "content": "<p>Med BARK™DNA får du instant fix hudpleje specialtilpasset til mænd, der hurtigt og effektivt giver dig en pænere hud og et skarpere look.<\/p>",
-          "link_text": "CHECK FØR\/EFTER",
-          "link_url": "shopify:\/\/pages\/kunderesultater"
-        }
-      },
       "product-special-08": {
         "type": "product-special-08",
         "blocks": {
@@ -3977,68 +3957,6 @@
           "57a9c4ee-f647-41db-9feb-f6206e850114"
         ],
         "settings": {
-        }
-      },
-      "16372680869abfe36e": {
-        "type": "image-tiles",
-        "blocks": {
-          "16372680869abfe36e-0": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Derma_BARK.jpg",
-              "width": 6,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "PH-VÆRDI OG",
-              "title": "MÆNDS HUD",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "LÆS MERE",
-              "button_link": "shopify:\/\/pages\/videnskaben-bag",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": true,
-              "max_width": 1000
-            }
-          },
-          "16372680869abfe36e-1": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Fugt.jpg",
-              "width": 6,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": false,
-              "subtitle": "HYBRID",
-              "title": "HUDPLEJE",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Læs mere",
-              "button_link": "shopify:\/\/pages\/anvendelse",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          }
-        },
-        "block_order": [
-          "16372680869abfe36e-0",
-          "16372680869abfe36e-1"
-        ],
-        "settings": {
-          "full_width": true,
-          "grid_gutter": true,
-          "section_spacing_top": true,
-          "hide_desktop": false,
-          "hide_mobile": false
         }
       },
       "page-special-06": {
@@ -4624,30 +4542,6 @@
       "product-special-07": {
         "type": "product-special-07",
         "settings": {
-        }
-      },
-      "164676944942a6e61d": {
-        "type": "background-video",
-        "disabled": true,
-        "settings": {
-          "section_size": "large",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=Vl7qRoRZ2Gs&feature=youtu.be"
-        }
-      },
-      "164676999510e5f5b1": {
-        "type": "background-video",
-        "disabled": true,
-        "settings": {
-          "section_size": "large",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=_0UYBfT0LZk"
-        }
-      },
-      "1646770322aa8fa6c5": {
-        "type": "background-video",
-        "disabled": true,
-        "settings": {
-          "section_size": "large",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=pA-iQO59RJM&feature=youtu.be"
         }
       },
       "1647260954dafe04b8": {
@@ -5948,19 +5842,6 @@
           "link_url": "shopify:\/\/pages\/videnskaben-bag"
         }
       },
-      "16496695348440e1c8": {
-        "type": "text-with-image",
-        "disabled": true,
-        "settings": {
-          "subheading": "a fresh new look",
-          "title": "",
-          "image": "shopify:\/\/shop_images\/edit.jpg",
-          "image_position": "right",
-          "content": "<p><\/p><p>Med BARK™DNA får du innovativ hudpleje designet til mænd, der på få sekunder giver dig en pænere hud og booster dit look.<\/p>",
-          "link_text": "CHECK IT OUT",
-          "link_url": "shopify:\/\/pages\/fragt-og-retur-1"
-        }
-      },
       "16516480996cd76c5d": {
         "type": "large-video-background",
         "settings": {
@@ -5980,48 +5861,6 @@
           "apply_overlay": true,
           "text_color": "#ffffff",
           "button_color": "#363636"
-        }
-      },
-      "16516486183d49255f": {
-        "type": "text-columns",
-        "disabled": true,
-        "settings": {
-          "subheading": "",
-          "title": "",
-          "header_alignment": "center",
-          "content_1": "<p>100% tilfredsgaranti<\/p>",
-          "content_2": "<p>Fri fragt over 250 dkk.<\/p>",
-          "link_text": "",
-          "link_url": "",
-          "section_border": true
-        }
-      },
-      "165199570522c85a97": {
-        "type": "featured-collections",
-        "disabled": true,
-        "blocks": {
-          "165199570522c85a97-0": {
-            "type": "collection",
-            "disabled": true,
-            "settings": {
-              "collection": "sets",
-              "title": "",
-              "grid_items_count": 3,
-              "button_text": "View all products"
-            }
-          }
-        },
-        "block_order": [
-          "165199570522c85a97-0"
-        ],
-        "settings": {
-          "title": "video guide",
-          "layout_mode": "carousel",
-          "show_product_info": true,
-          "show_vendor": false,
-          "show_color_swatch": false,
-          "grid_mobile_items_per_row": "2",
-          "grid_desktop_items_per_row": 3
         }
       },
       "1652359859a0d17bd6": {
@@ -6047,19 +5886,6 @@
           "content": "<p>Tilmed dig BARK™DNA community og få de seneste nyheder.<br\/><br\/><\/p>"
         }
       },
-      "1653145535edf8215b": {
-        "type": "text-with-image",
-        "disabled": true,
-        "settings": {
-          "subheading": "boost dit look",
-          "title": "",
-          "image": "shopify:\/\/shop_images\/Skaermbillede_2022-05-17_kl._09.16.36.png",
-          "image_position": "right",
-          "content": "<p>Med BARK™DNA får du instant fix hudpleje specialtilpasset til mænd, der hurtigt og effektivt giver dig en pænere hud og et skarpere look.<\/p>",
-          "link_text": "Check her hvordan",
-          "link_url": ""
-        }
-      },
       "1653153379f7422a17": {
         "type": "featured-video",
         "settings": {
@@ -6080,135 +5906,6 @@
           "content": "<p>Med vores Expert Look får du en pænere hud og et knivskarpt look på 2 minutter. Check videoen for at se hvor nemt det er.<\/p>",
           "link_text": "",
           "link_url": ""
-        }
-      },
-      "1653159989ce0e3774": {
-        "type": "image-tiles",
-        "blocks": {
-          "1653159989ce0e3774-0": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 12,
-              "aspect_ratio": "2",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          },
-          "1653159989ce0e3774-1": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 6,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          },
-          "1653159989ce0e3774-2": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 3,
-              "aspect_ratio": "0.5",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          },
-          "1653159989ce0e3774-3": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 3,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          },
-          "1653159989ce0e3774-4": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 3,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          }
-        },
-        "block_order": [
-          "1653159989ce0e3774-0",
-          "1653159989ce0e3774-1",
-          "1653159989ce0e3774-2",
-          "1653159989ce0e3774-3",
-          "1653159989ce0e3774-4"
-        ],
-        "settings": {
-          "full_width": true,
-          "grid_gutter": true,
-          "section_spacing_top": true,
-          "hide_desktop": false,
-          "hide_mobile": false
         }
       },
       "1653160185d25bd9a6": {
@@ -6339,29 +6036,24 @@
           "hide_desktop": false,
           "hide_mobile": false
         }
+      },
+      "1653600915f04e146d": {
+        "type": "hero-video",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
-      "1620650422435db212",
+      "1653600915f04e146d",
       "16294451883d6e3643",
       "164762977142c0bc36",
       "16516480996cd76c5d",
-      "16516486183d49255f",
-      "1653145535edf8215b",
-      "163480936973f4b79a",
-      "164676944942a6e61d",
-      "16496695348440e1c8",
       "16473735982a99564e",
       "1653155011c45301ce",
       "1653153379f7422a17",
-      "165199570522c85a97",
-      "16372680869abfe36e",
       "16478693522918ff57",
-      "1653159989ce0e3774",
       "1652359859a0d17bd6",
       "1647260954dafe04b8",
-      "164676999510e5f5b1",
-      "1646770322aa8fa6c5",
       "1647457107ca402fbd",
       "1653160185d25bd9a6",
       "16322095778e1f4d09",
