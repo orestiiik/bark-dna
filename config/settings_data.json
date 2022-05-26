@@ -3164,28 +3164,6 @@
           "back_title": ""
         }
       },
-      "16294451883d6e3643": {
-        "type": "large-image-background",
-        "settings": {
-          "subtitle": "RENS I MATTÈR I FUGT I BOOST",
-          "titleUpper": "fuldfør det",
-          "titleLower": "perfekte look",
-          "text": "",
-          "image": "shopify:\/\/shop_images\/Image_22-03-2022_at_12.14.jpg",
-          "alignment": "center",
-          "show_arrow": true,
-          "button_1_text": "Shop",
-          "button_1_link": "shopify:\/\/collections\/all",
-          "button_2_text": "boost dit look på 2 min.",
-          "button_2_link": "shopify:\/\/pages\/fragt-og-retur-1",
-          "section_height": "fullscreen",
-          "content_alignment": "top",
-          "narrow_content": true,
-          "apply_overlay": false,
-          "text_color": "#ffffff",
-          "button_color": "#ffffff"
-        }
-      },
       "module-marquee": {
         "type": "module-marquee",
         "settings": {
@@ -6044,15 +6022,14 @@
           "titleUpper": "fuldfør det",
           "titleLower": "perfekte look",
           "button_1_text": "shop",
-          "button_1_link": "/collections/produkter",
+          "button_1_link": "\/collections\/produkter",
           "button_2_text": "boost dit look på 2 min.",
-          "button_2_link": "/pages/fragt-og-retur-1"
+          "button_2_link": "\/pages\/fragt-og-retur-1"
         }
       }
     },
     "content_for_index": [
       "1653600915f04e146d",
-      "16294451883d6e3643",
       "164762977142c0bc36",
       "16516480996cd76c5d",
       "16473735982a99564e",
