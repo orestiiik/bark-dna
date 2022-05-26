@@ -735,6 +735,7 @@
       },
       "1620650422435db212": {
         "type": "background-video",
+        "disabled": true,
         "settings": {
           "section_size": "large",
           "video_url": "https:\/\/www.youtube.com\/watch?v=xgb5R-tsxYA"
@@ -3178,6 +3179,7 @@
           "titleUpper": "fuldfør det",
           "titleLower": "perfekte look",
           "text": "",
+          "image": "shopify:\/\/shop_images\/Image_22-03-2022_at_12.14.jpg",
           "alignment": "center",
           "show_arrow": true,
           "button_1_text": "Shop",
@@ -5961,12 +5963,11 @@
       },
       "16516480996cd76c5d": {
         "type": "large-video-background",
-        "disabled": true,
         "settings": {
           "subtitle": "",
           "title": "Hybrid Skincare for men",
           "text": "<p>Skincare that makes you<br\/>look better immediately<\/p>",
-          "video_url": "",
+          "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4ddb212e12a849d68ff9d6c9bbc4ddd2.mp4",
           "alignment": "center",
           "show_arrow": false,
           "button_1_text": "Shop",
