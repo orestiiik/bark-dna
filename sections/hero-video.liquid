@@ -1,13 +1,41 @@
 <div
         class="HeroVideoTextButtons"
 >
-    <div class="overlay"></div>
-    <section
-            id="section-{{ section.id }}"
-            data-section-id="{{ section.id }}"
+    <div
+            class="hero-text"
     >
-        {% include "large-background", data_id: section.id, data_settings: section.settings, data_type: 'image' %}
-    </section>
+        {% if section.settings.subtitle != blank %}
+            <p class="Heading u-h5 text--subdued">{{ section.settings.subtitle }}</p>
+        {% endif %}
+        {% if section.settings.titleUpper != blank %}
+            <h2 class="SectionHeader__Heading Heading u-h1">
+                {{ section.settings.titleUpper }}
+            </h2>
+        {% endif %}
+        {% if section.settings.titleLower != blank %}
+            <h2 class="SectionHeader__Heading Heading u-h1">
+                {{ section.settings.titleLower }}
+            </h2>
+        {% endif %}
+        {%- if section.settings.button_1_text != blank -%}
+            <a
+                    href="{{ section.settings.button_1_link }}"
+                    class="ButtonGroup__Item Button"
+            >{{ section.settings.button_1_text | escape }}
+                <span class="Button__Arrow">{%- render 'icon' with 'arrow_button' -%}</span>
+            </a>
+        {%- endif -%}
+
+        {%- if section.settings.button_2_text != blank -%}
+            <a
+                    href="{{ section.settings.button_2_link }}"
+                    class="ButtonGroup__Item Button"
+            >{{ section.settings.button_2_text | escape }}
+                <span class="Button__Arrow">{%- render 'icon' with 'arrow_button' -%}</span>
+            </a>
+        {%- endif -%}
+    </div>
+    <div class="overlay"></div>
     <video
             autoplay
             muted
@@ -42,170 +70,28 @@
 "default": "Large image with text"
 },
 {
-"type": "richtext",
-"id": "text",
-"label": "Text"
-},
-{
-"type": "image_picker",
-"id": "image",
-"label": "Image"
-},
-{
-"type": "select",
-"id": "alignment",
-"label": "Image focal point",
-"info": "Used to keep the subject of your photo in view.",
-"default": "center",
-"options": [
-{
-"value": "top left",
-"label": "Top left"
-},
-{
-"value": "top",
-"label": "Top"
-},
-{
-"value": "top right",
-"label": "Top right"
-},
-{
-"value": "center left",
-"label": "Left"
-},
-{
-"value": "center",
-"label": "Middle"
-},
-{
-"value": "center right",
-"label": "Right"
-},
-{
-"value": "bottom left",
-"label": "Bottom left"
-},
-{
-"value": "bottom",
-"label": "Bottom"
-},
-{
-"value": "bottom right",
-"label": "Bottom right"
-}
-]
-},
-{
-"type": "checkbox",
-"id": "show_arrow",
-"label": "Show bottom arrow",
-"default": false
-},
-{
-"type": "header",
-"content": "Button 1"
+"type": "text",
+"id": "button_1_text",
+"label": "Button 1 Title",
+"default": "Button 1"
 },
 {
 "type": "text",
-"id": "button_1_text",
-"label": "Button 1 label"
-},
-{
-"type": "url",
 "id": "button_1_link",
-"label": "Button 1 link"
-},
-{
-"type": "header",
-"content": "Button 2"
+"label": "Button 1 link",
+"default": "#"
 },
 {
 "type": "text",
 "id": "button_2_text",
-"label": "Button 2 label"
+"label": "Button 2 Title",
+"default": "Button 2"
 },
 {
-"type": "url",
+"type": "text",
 "id": "button_2_link",
-"label": "Button 2 link"
-},
-{
-"type": "header",
-"content": "Sizing"
-},
-{
-"type": "select",
-"id": "section_height",
-"label": "Section height",
-"options": [
-{
-"value": "small",
-"label": "Small"
-},
-{
-"value": "normal",
-"label": "Normal"
-},
-{
-"value": "large",
-"label": "Large"
-},
-{
-"value": "fullscreen",
-"label": "Fullscreen"
-}
-],
-"default": "normal"
-},
-{
-"type": "select",
-"id": "content_alignment",
-"label": "Content alignment",
-"default": "center",
-"options": [
-{
-"value": "top",
-"label": "Top"
-},
-{
-"value": "center",
-"label": "Middle"
-},
-{
-"value": "bottom",
-"label": "Bottom"
-}
-]
-},
-{
-"type": "checkbox",
-"id": "narrow_content",
-"label": "Narrow content",
-"default": false
-},
-{
-"type": "header",
-"content": "Style"
-},
-{
-"type": "checkbox",
-"id": "apply_overlay",
-"label": "Apply overlay on image",
-"info": "This can improve text visibility.",
-"default": true
-},
-{
-"type": "color",
-"id": "text_color",
-"label": "Text",
-"default": "#ffffff"
-},
-{
-"type": "color",
-"id": "button_color",
-"label": "Button text",
-"default": "#363636"
+"label": "Button 2 Link",
+"default": "#"
 }
 ],
 "presets": [
@@ -222,15 +108,40 @@
 position: relative;
 height: 100vh;
 }
+.HeroVideoTextButtons .ButtonGroup__Item {
+border-style: solid;
+border-width: 1px;
+border-color: white;
+}
+.HeroVideoTextButtons .hero-text {
+position: absolute;
+z-index: 3;
+top: 23%;
+left: 5%;
+transform: translate(0%, -23%);
+color: white !important;
+}
+.HeroVideoTextButtons .hero-text .Heading {
+color: white !important;
+}
 .HeroVideoTextButtons video {
 object-fit: cover;
 width: 100vw;
 height: 100%;
 }
+.HeroVideoTextButtons .hero-text .SectionHeader__Heading {
+margin-top: 0;
+margin-bottom: 0px;
+}
+.HeroVideoTextButtons .hero-text .text--subdued {
+padding-bottom: 15px;
+margin-bottom: 0px;
+}
 .HeroVideoTextButtons .overlay {
 position: absolute;
+z-index: 2;
 background: black;
-opacity: 0.5;
+opacity: 0.6;
 width: 100vw;
 height: 100%;
 }
