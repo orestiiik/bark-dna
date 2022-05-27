@@ -5993,11 +5993,18 @@
           "button_1_text": "SE PRODUKTER",
           "button_1_link": "\/collections\/produkter"
         }
+      },
+      "16536708389a678b85": {
+        "type": "before-and-after",
+        "settings": {
+          "text": "Check vores kunders vilde resultater med vores produkter her."
+        }
       }
     },
     "content_for_index": [
       "1653600915f04e146d",
       "164762977142c0bc36",
+      "16536708389a678b85",
       "16473735982a99564e",
       "1653155011c45301ce",
       "1653153379f7422a17",
