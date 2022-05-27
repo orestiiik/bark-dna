@@ -1,5 +1,11 @@
 <div class="simpleTextSection">
     <p>{{ section.settings.Text | escape }}</p>
+    <a
+            href="{{ section.settings.button_1_link }}"
+            class="ButtonGroup__Item Button"
+    >{{ section.settings.button_1_text | escape }}
+        <span class="Button__Arrow">{%- render 'icon' with 'arrow_button' -%}</span>
+    </a>
 </div>
 {% schema %}
 {
@@ -9,6 +15,16 @@
 "type": "text",
 "id": "Text",
 "label": "Text"
+},
+{
+"type": "text",
+"id": "button_1_link",
+"label": "Button link"
+},
+{
+"type": "text",
+"id": "button_1_text",
+"label": "Button label"
 }
 ],
 "presets": [
