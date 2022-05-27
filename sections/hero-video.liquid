@@ -7,12 +7,17 @@
         {% if section.settings.subtitle != blank %}
             <p class="Heading u-h5 text--subdued">{{ section.settings.subtitle }}</p>
         {% endif %}
-        {% if section.settings.titleUpper != blank %}
+        {% if section.settings.firstRow != blank %}
             <h2 class="SectionHeader__Heading Heading u-h1">
                 {{ section.settings.titleUpper }}
             </h2>
         {% endif %}
-        {% if section.settings.titleLower != blank %}
+        {% if section.settings.secondRow != blank %}
+            <h2 class="SectionHeader__Heading Heading u-h1">
+                {{ section.settings.titleLower }}
+            </h2>
+        {% endif %}
+        {% if section.settings.thirdRow != blank %}
             <h2 class="SectionHeader__Heading Heading u-h1">
                 {{ section.settings.titleLower }}
             </h2>
@@ -22,15 +27,6 @@
                     href="{{ section.settings.button_1_link }}"
                     class="ButtonGroup__Item Button"
             >{{ section.settings.button_1_text | escape }}
-                <span class="Button__Arrow">{%- render 'icon' with 'arrow_button' -%}</span>
-            </a>
-        {%- endif -%}
-
-        {%- if section.settings.button_2_text != blank -%}
-            <a
-                    href="{{ section.settings.button_2_link }}"
-                    class="ButtonGroup__Item Button"
-            >{{ section.settings.button_2_text | escape }}
                 <span class="Button__Arrow">{%- render 'icon' with 'arrow_button' -%}</span>
             </a>
         {%- endif -%}
@@ -59,15 +55,21 @@
 },
 {
 "type": "text",
-"id": "titleUpper",
-"label": "Upper Title",
-"default": "Large image with text"
+"id": "firstRow",
+"label": "First Title",
+"default": "First text"
 },
 {
 "type": "text",
-"id": "titleLower",
-"label": "Lower Title",
-"default": "Large image with text"
+"id": "secondRow",
+"label": "Second Title",
+"default": "Second text"
+},
+{
+"type": "text",
+"id": "thirdRow",
+"label": "Third Title",
+"default": "Third text"
 },
 {
 "type": "text",
@@ -79,18 +81,6 @@
 "type": "text",
 "id": "button_1_link",
 "label": "Button 1 link",
-"default": "#"
-},
-{
-"type": "text",
-"id": "button_2_text",
-"label": "Button 2 Title",
-"default": "Button 2"
-},
-{
-"type": "text",
-"id": "button_2_link",
-"label": "Button 2 Link",
 "default": "#"
 }
 ],

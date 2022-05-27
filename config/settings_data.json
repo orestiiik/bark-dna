@@ -6018,13 +6018,12 @@
       "1653600915f04e146d": {
         "type": "hero-video",
         "settings": {
-          "subtitle": "RENS I MATTÈR I FUGT I BOOST",
-          "titleUpper": "fuldfør det",
-          "titleLower": "perfekte look",
-          "button_1_text": "shop",
-          "button_1_link": "\/collections\/produkter",
-          "button_2_text": "boost dit look på 2 min.",
-          "button_2_link": "\/pages\/fragt-og-retur-1"
+          "subtitle": "MÆNDS HUDPLEJE 2.0",
+          "firstRow": "HUDPLEJE, DET FÅR DIG",
+          "secondRow": "TIL AT SE BEDRE UD",
+          "thirdRow": "MED DET SAMME",
+          "button_1_text": "SE PRODUKTER",
+          "button_1_link": "\/collections\/produkter"
         }
       }
     },
