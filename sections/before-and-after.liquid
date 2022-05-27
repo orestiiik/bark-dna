@@ -4,22 +4,6 @@
     <div
             class="BeforeAndAfter"
     >
-        <div id="comparison">
-            <figure style="background-image: url({{ section.settings.before }});">
-                <div
-                        id="divisor"
-                        style="background-image: url({{ section.settings.after }});"
-                ></div>
-            </figure>
-            <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="50"
-                    id="slider"
-                    oninput="moveDivisor()"
-            >
-        </div>
         <div id="textBeforeAfter">
             <p>{{ section.settings.FirstText }}</p>
             <p>{{ section.settings.SecondText }}</p>
@@ -29,6 +13,24 @@
             >{{ section.settings.button_1_text | escape }}
                 <span class="Button__Arrow">{%- render 'icon' with 'arrow_button' -%}</span>
             </a>
+        </div>
+        <div class="comparisonBox">
+            <div id="comparison">
+                <figure style="background-image: url({{ section.settings.before }});">
+                    <div
+                            id="divisor"
+                            style="background-image: url({{ section.settings.after }});"
+                    ></div>
+                </figure>
+                <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="50"
+                        id="slider"
+                        oninput="moveDivisor()"
+                >
+            </div>
         </div>
     </div>
 </div>
