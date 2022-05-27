@@ -6001,7 +6001,9 @@
           "FirstText": "Check vores kunders vilde resultater med vores produkter her.",
           "SecondText": "Alle billeder på denne side er udredigerede og efterbilledet er tager 10 minutter efter påføring af Hero Complexion",
           "before": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/6953\/6418\/files\/alex_before.jpg?v=1653672928",
-          "after": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/6953\/6418\/files\/alex_after.jpg?v=1653672928"
+          "after": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/6953\/6418\/files\/alex_after.jpg?v=1653672928",
+          "button_1_text": "SE MERE",
+          "button_1_link": "\/"
         }
       }
     },
