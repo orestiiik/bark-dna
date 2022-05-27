@@ -5777,6 +5777,12 @@
         "settings": {
           "Headline": "AMBASSADØRER"
         }
+      },
+      "1653679222ab23a84e": {
+        "type": "simple-text",
+        "settings": {
+          "Text": "BARK™DNA er meget stolte af, at kunne præsentere en række officielle ambassadører, som alle indkorporerer vores produkter til at være den bedste udgave af sig selv."
+        }
       }
     },
     "content_for_index": [
@@ -5784,6 +5790,7 @@
       "164762977142c0bc36",
       "16536708389a678b85",
       "1653678837e923a894",
+      "1653679222ab23a84e",
       "1647260954dafe04b8",
       "16478693522918ff57",
       "16322095778e1f4d09",
