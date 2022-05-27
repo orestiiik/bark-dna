@@ -5781,7 +5781,15 @@
       "1653679222ab23a84e": {
         "type": "simple-text",
         "settings": {
-          "Text": "BARK™DNA er meget stolte af, at kunne præsentere en række officielle ambassadører, som alle indkorporerer vores produkter til at være den bedste udgave af sig selv."
+          "Text": "BARK™DNA er meget stolte af, at kunne præsentere en række officielle ambassadører, som alle indkorporerer vores produkter til at være den bedste udgave af sig selv.",
+          "button_1_link": "\/pages\/konkurrence",
+          "button_1_text": "SE MERE"
+        }
+      },
+      "16536801279b505a0e": {
+        "type": "divider-headline",
+        "settings": {
+          "Headline": "mænds hud"
         }
       }
     },
@@ -5792,6 +5800,7 @@
       "1653678837e923a894",
       "1653679222ab23a84e",
       "1647260954dafe04b8",
+      "16536801279b505a0e",
       "16478693522918ff57",
       "16322095778e1f4d09",
       "165238361971bd98c9"
