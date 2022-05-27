@@ -5737,17 +5737,6 @@
           "link_url": "shopify:\/\/pages\/videnskaben-bag"
         }
       },
-      "1652359859a0d17bd6": {
-        "type": "text-with-image",
-        "settings": {
-          "subheading": "AMBASSADØRER",
-          "title": "",
-          "image_position": "right",
-          "content": "<p>BARK™DNA er meget stolte af, at kunne præsentere en række officielle ambassadører, som alle indkorporerer vores produkter til at være den bedste udgave af sig selv. <\/p>",
-          "link_text": "",
-          "link_url": ""
-        }
-      },
       "165238361971bd98c9": {
         "type": "newsletter",
         "settings": {
@@ -5782,13 +5771,19 @@
           "button_1_text": "SE MERE",
           "button_1_link": "\/"
         }
+      },
+      "1653678837e923a894": {
+        "type": "divider-headline",
+        "settings": {
+          "Headline": "AMBASSADØRER"
+        }
       }
     },
     "content_for_index": [
       "1653600915f04e146d",
       "164762977142c0bc36",
       "16536708389a678b85",
-      "1652359859a0d17bd6",
+      "1653678837e923a894",
       "1647260954dafe04b8",
       "16478693522918ff57",
       "16322095778e1f4d09",
