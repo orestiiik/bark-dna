@@ -148,7 +148,7 @@
           "show_shop_switch": false,
           "show_currency_selector": false,
           "show_locale_selector": false,
-          "navigation_menu": "main-menu",
+          "navigation_menu": "bark-2-0-menu",
           "navigation_style": "inline",
           "show_icons": true,
           "enable_transparent_header": true,
@@ -5402,7 +5402,7 @@
             "settings": {
               "collection": "produkter",
               "title": "",
-              "grid_items_count": 8,
+              "grid_items_count": 4,
               "button_text": "View all products"
             }
           },
@@ -5422,7 +5422,7 @@
           "164762977142c0bc36-0"
         ],
         "settings": {
-          "title": "produkter",
+          "title": "Bestsellers",
           "layout_mode": "carousel",
           "show_product_info": true,
           "show_vendor": false,
@@ -5820,27 +5820,6 @@
           "link_url": "shopify:\/\/pages\/videnskaben-bag"
         }
       },
-      "16516480996cd76c5d": {
-        "type": "large-video-background",
-        "settings": {
-          "subtitle": "",
-          "title": "Hybrid Skincare for men",
-          "text": "<p>Skincare that makes you<br\/>look better immediately<\/p>",
-          "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4ddb212e12a849d68ff9d6c9bbc4ddd2.mp4",
-          "alignment": "center",
-          "show_arrow": false,
-          "button_1_text": "Shop",
-          "button_1_link": "shopify:\/\/collections\/produkter",
-          "button_2_text": "",
-          "button_2_link": "",
-          "section_height": "normal",
-          "content_alignment": "center",
-          "narrow_content": false,
-          "apply_overlay": true,
-          "text_color": "#ffffff",
-          "button_color": "#363636"
-        }
-      },
       "1652359859a0d17bd6": {
         "type": "text-with-image",
         "settings": {
@@ -6030,7 +6009,6 @@
     "content_for_index": [
       "1653600915f04e146d",
       "164762977142c0bc36",
-      "16516480996cd76c5d",
       "16473735982a99564e",
       "1653155011c45301ce",
       "1653153379f7422a17",
