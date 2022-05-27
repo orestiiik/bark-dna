@@ -3487,7 +3487,7 @@
           "subheading": "BARK™DNA",
           "title": "",
           "header_alignment": "left",
-          "content_1": "<p>I ALT for lang tid har ingen turde udfordre status quo og være på forkant med tidens trends og behovet hos en ny generation af mænd i skønhedsindustrien. Den obligatoriske hudplejerutine bestående af rensegel, cream og scrub dækker ikke længere behovet hos en ny generation af kvalitets- og selvbevidste mænd, som ønsker at præsentere den bedste udgave af sig selv til verden. BARK™DNA repræsenterer en ny æra inden for hudpleje til mænd. Vi har gentænkt alt fra formler og ingredienser til eksisterende stereotyper og status quo i skønhedsindustrien.  Vi har skabt en ny og smarter hudplejeserie og vi kalder den Hybrid Hudpleje. <\/p>",
+          "content_1": "<p>I ALT for lang tid har ingen turde udfordre status quo og være på forkant med tidens trends og behovet hos en ny generation af mænd i skønhedsindustrien. Den obligatoriske hudplejerutine bestående af rensegel, cream og scrub dækker ikke længere behovet hos en ny generation af kvalitets- og selvbevidste mænd, som ønsker at præsentere den bedste udgave af sig selv til verden. BARK™DNA repræsenterer en ny æra inden for hudpleje til mænd. Vi har gentænkt alt fra formler og ingredienser til eksisterende stereotyper og status quo i skønhedsindustrien. Vi har skabt en ny og smarter hudplejeserie og vi kalder den Hybrid Hudpleje.<\/p>",
           "content_2": "<p>Hybrid Hudpleje, er high-performance hudpleje specifikt udviklet til mænds unikke hud og dens pH-værdi. Den booster hudens look øjeblikkeligt og giver samtidig den bedste pleje til mænds unikke hud. Alle produkter indeholder hybride egenskaber og arbejder på tværs af hinanden, sådan at du med kun fire produkter får den ultimative ansigtspleje - simpelt, subtilt og effektivt. Med BARK™DNA kan du være den bedste udgave af dig selv indeni og udenpå, idag og imorgen. <br\/><br\/>Hudpleje til mænd bliver aldrig det samme. <\/p>",
           "link_text": "",
           "link_url": "",
@@ -4605,66 +4605,6 @@
           "hide_mobile": false
         }
       },
-      "16473735982a99564e": {
-        "type": "image-tiles",
-        "blocks": {
-          "16473735982a99564e-1": {
-            "type": "tile",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Alexander_for.jpg",
-              "width": 6,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": false,
-              "subtitle": "FØR EXPERT LOOK",
-              "title": "",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "hybrid hudplejee",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          },
-          "16473735982a99564e-0": {
-            "type": "tile",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/alex_efter_c9a9cf8b-083d-4f95-a275-e57a453f80fe.jpg",
-              "width": 6,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": false,
-              "subtitle": "EFTER EXPERT LOOK",
-              "title": "",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": true,
-              "max_width": 1000
-            }
-          }
-        },
-        "block_order": [
-          "16473735982a99564e-1",
-          "16473735982a99564e-0"
-        ],
-        "settings": {
-          "full_width": true,
-          "grid_gutter": true,
-          "section_spacing_top": true,
-          "hide_desktop": false,
-          "hide_mobile": false
-        }
-      },
       "page-special-14": {
         "type": "page-special-14",
         "blocks": {
@@ -5382,18 +5322,6 @@
           "back_title": ""
         }
       },
-      "1647457107ca402fbd": {
-        "type": "text-with-image",
-        "settings": {
-          "subheading": "Marco Vincent founder",
-          "title": "",
-          "image": "shopify:\/\/shop_images\/marco_nyeste.jpg",
-          "image_position": "right",
-          "content": "<p>Founder, Marco Vincent forklarer om baggrunden for BARK™DNA's tilblivelse.<br\/><br\/>Vi vil bidrage til en mere åben og nuanceret maskulinitetskultur, der afspejler nutiden og rummer alle, og vi vil hjælpe den den nye generation af mænd med at eje deres tilstedeværelse. <br\/><br\/>Det gør vi ved at tilbyde en helt ny kategori af hudpleje, der giver dig en oplevelse af styrket selvtillid og inspirerer dig til at stå frem med hovedet holdt højt i enhver situation.<br\/><br\/><em>Dit ansigt er dit vindue til verden, og det er verdens vindue til dig, derfor er en selvsikker fremtoning vigtig.<\/em><\/p>",
-          "link_text": "",
-          "link_url": ""
-        }
-      },
       "164762977142c0bc36": {
         "type": "featured-collections",
         "blocks": {
@@ -5832,157 +5760,6 @@
           "content": "<p>Tilmed dig BARK™DNA community og få de seneste nyheder.<br\/><br\/><\/p>"
         }
       },
-      "1653153379f7422a17": {
-        "type": "featured-video",
-        "settings": {
-          "section_size": "large",
-          "text_color": "#ffffff",
-          "subheading": "",
-          "title": "EXPERT LOOK",
-          "image": "shopify:\/\/shop_images\/hero_test.jpg",
-          "video_url": "https:\/\/youtu.be\/aMpKXuoLi6M"
-        }
-      },
-      "1653155011c45301ce": {
-        "type": "text-with-image",
-        "settings": {
-          "subheading": "boost dit look",
-          "title": "",
-          "image_position": "right",
-          "content": "<p>Med vores Expert Look får du en pænere hud og et knivskarpt look på 2 minutter. Check videoen for at se hvor nemt det er.<\/p>",
-          "link_text": "",
-          "link_url": ""
-        }
-      },
-      "1653160185d25bd9a6": {
-        "type": "image-tiles",
-        "blocks": {
-          "1653160185d25bd9a6-0": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 12,
-              "aspect_ratio": "2",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          },
-          "1653160185d25bd9a6-1": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 6,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          },
-          "1653160185d25bd9a6-2": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 3,
-              "aspect_ratio": "0.5",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          },
-          "1653160185d25bd9a6-3": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 3,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          },
-          "1653160185d25bd9a6-4": {
-            "type": "tile",
-            "disabled": true,
-            "settings": {
-              "width": 3,
-              "aspect_ratio": "1",
-              "mobile_height": "auto",
-              "apply_overlay": true,
-              "subtitle": "Pre-Heading",
-              "title": "Tile block",
-              "text": "",
-              "color": "#ffffff",
-              "button_label": "Optional button",
-              "button_link": "",
-              "alignment": "center",
-              "mobile_alignment": "same",
-              "align_text": "left",
-              "align_text_vertical": "bottom",
-              "apply_max_width": false,
-              "max_width": 1000
-            }
-          }
-        },
-        "block_order": [
-          "1653160185d25bd9a6-0",
-          "1653160185d25bd9a6-1",
-          "1653160185d25bd9a6-2",
-          "1653160185d25bd9a6-3",
-          "1653160185d25bd9a6-4"
-        ],
-        "settings": {
-          "full_width": true,
-          "grid_gutter": true,
-          "section_spacing_top": true,
-          "hide_desktop": false,
-          "hide_mobile": false
-        }
-      },
       "1653600915f04e146d": {
         "type": "hero-video",
         "settings": {
@@ -6011,14 +5788,9 @@
       "1653600915f04e146d",
       "164762977142c0bc36",
       "16536708389a678b85",
-      "16473735982a99564e",
-      "1653155011c45301ce",
-      "1653153379f7422a17",
-      "16478693522918ff57",
       "1652359859a0d17bd6",
       "1647260954dafe04b8",
-      "1647457107ca402fbd",
-      "1653160185d25bd9a6",
+      "16478693522918ff57",
       "16322095778e1f4d09",
       "165238361971bd98c9"
     ]
