@@ -1,0 +1,28 @@
+<div class="simpleTextSection">
+    <p>{{ section.settings.Text | escape }}</p>
+</div>
+{% schema %}
+{
+"name": "Simple text",
+"settings": [
+{
+"type": "text",
+"id": "Text",
+"label": "Text"
+}
+],
+"presets": [
+{
+"name": "Simple text",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+
+{% endjavascript %}
