@@ -9,17 +9,17 @@
         {% endif %}
         {% if section.settings.firstRow != blank %}
             <h2 class="SectionHeader__Heading Heading u-h1">
-                {{ section.settings.titleUpper }}
+                {{ section.settings.firstRow }}
             </h2>
         {% endif %}
         {% if section.settings.secondRow != blank %}
             <h2 class="SectionHeader__Heading Heading u-h1">
-                {{ section.settings.titleLower }}
+                {{ section.settings.secondRow }}
             </h2>
         {% endif %}
         {% if section.settings.thirdRow != blank %}
             <h2 class="SectionHeader__Heading Heading u-h1">
-                {{ section.settings.titleLower }}
+                {{ section.settings.thirdRow }}
             </h2>
         {% endif %}
         {%- if section.settings.button_1_text != blank -%}
