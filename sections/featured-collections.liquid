@@ -78,8 +78,7 @@
             <div class="ProductList ProductList--carousel Carousel" data-flickity-config='{{ flickity_options }}'>
               {%- for product in collection.products limit: block.settings.grid_items_count -%}
                 <div class="Carousel__Cell">
-                  {%- include 'module-tax-multiplier', data_product: product -%}
-                  {%- render 'product-item', product: product, show_product_info: section.settings.show_product_info, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true, tax_multiplier: tax_multiplier -%}
+
                 </div>
               {%- endfor -%}
             </div>
