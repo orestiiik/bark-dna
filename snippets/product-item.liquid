@@ -164,20 +164,6 @@
             {%- endif -%}
           </div>
 
-          {%- if product.selected_or_first_available_variant.unit_price_measurement -%}
-            <div class="ProductItem__UnitPriceMeasurement">
-              <div class="UnitPriceMeasurement Heading Text--subdued">
-                <span class="UnitPriceMeasurement__Price">{{ product.selected_or_first_available_variant.unit_price | times: tax_multiplier | money_without_trailing_zeros }}</span>
-                <span class="UnitPriceMeasurement__Separator">/ </span>
-
-                <span class="UnitPriceMeasurement__ReferenceValue" {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value == 1 -%}style="display: none"{% endif %}>
-                  {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
-                </span>
-
-                <span class="UnitPriceMeasurement__ReferenceUnit">{{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}</span>
-              </div>
-            </div>
-          {%- endif -%}
         {%- endif -%}
 
         {%- if show_price_on_hover == false and color_swatch_list != blank -%}
