@@ -5712,18 +5712,6 @@
           "back_title": ""
         }
       },
-      "16478693522918ff57": {
-        "type": "text-with-image",
-        "settings": {
-          "subheading": "mænds hud",
-          "title": "",
-          "image": "shopify:\/\/shop_images\/ABC.png",
-          "image_position": "left",
-          "content": "<p>Alle BARK™DNA-produkter er udviklet på baggrund af mænds unikke hud og dens pH-niveau som ligger i spændet (4,6-4,9). Det sikrer dig den rette dermatologiske pleje til din unikke hud og en langt større effekt med dine hudplejeprodukter. Det garanterer vi!<\/p>",
-          "link_text": "LÆS MERE",
-          "link_url": "shopify:\/\/pages\/videnskaben-bag"
-        }
-      },
       "165238361971bd98c9": {
         "type": "newsletter",
         "settings": {
@@ -5791,6 +5779,16 @@
         "settings": {
           "Headline": "BARK™DNA"
         }
+      },
+      "1653735656998d7ddd": {
+        "type": "photo-text-button",
+        "settings": {
+          "headline": "mænds hud",
+          "FirstText": "Alle BARK™DNA-produkter er udviklet på baggrund af mænds unikke hud og dens pH-niveau som ligger i spændet (4,6-4,9). Det sikrer dig den rette dermatologiske pleje til din unikke hud og en langt større effekt med dine hudplejeprodukter. Det garanterer vi!",
+          "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/6953\/6418\/files\/ABC.png?v=1649770563",
+          "button_1_text": "LÆS MERE",
+          "button_1_link": ""
+        }
       }
     },
     "content_for_index": [
@@ -5801,7 +5799,7 @@
       "1653679222ab23a84e",
       "1647260954dafe04b8",
       "16536801279b505a0e",
-      "16478693522918ff57",
+      "1653735656998d7ddd",
       "1653732402d7a10d13",
       "165373239485584c85",
       "165238361971bd98c9"
