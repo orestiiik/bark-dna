@@ -1,15 +1,12 @@
-<div class="container--frontpage FeaturedCollection__TopBorder">
-    <h3 class="SectionHeader__SubHeading Heading SubHeading__Collection u-h6 SectionHeader__SubHeading--text-start">{{ section.settings.headline | escape }}</h3>
-
     <div
             class="BeforeAndAfter"
     >
        <div class="comparisonBox">
             <div id="comparison">
-                <figure>
+                <figure style="background-image: url({{ section.settings.image }});">
                     <div
                             id="divisor"
-                            style="background-image: url({{ section.settings.image }});"
+                            
                     ></div>
                 </figure>
             </div>
@@ -25,7 +22,6 @@
         </div>
        
     </div>
-</div>
 {% schema %}
 {
 "name": "Photo text button",
