@@ -3481,19 +3481,6 @@
         "settings": {
         }
       },
-      "16322095778e1f4d09": {
-        "type": "text-columns",
-        "settings": {
-          "subheading": "BARK™DNA",
-          "title": "",
-          "header_alignment": "left",
-          "content_1": "<p>I ALT for lang tid har ingen turde udfordre status quo og være på forkant med tidens trends og behovet hos en ny generation af mænd i skønhedsindustrien. Den obligatoriske hudplejerutine bestående af rensegel, cream og scrub dækker ikke længere behovet hos en ny generation af kvalitets- og selvbevidste mænd, som ønsker at præsentere den bedste udgave af sig selv til verden. BARK™DNA repræsenterer en ny æra inden for hudpleje til mænd. Vi har gentænkt alt fra formler og ingredienser til eksisterende stereotyper og status quo i skønhedsindustrien. Vi har skabt en ny og smarter hudplejeserie og vi kalder den Hybrid Hudpleje.<\/p>",
-          "content_2": "<p>Hybrid Hudpleje, er high-performance hudpleje specifikt udviklet til mænds unikke hud og dens pH-værdi. Den booster hudens look øjeblikkeligt og giver samtidig den bedste pleje til mænds unikke hud. Alle produkter indeholder hybride egenskaber og arbejder på tværs af hinanden, sådan at du med kun fire produkter får den ultimative ansigtspleje - simpelt, subtilt og effektivt. Med BARK™DNA kan du være den bedste udgave af dig selv indeni og udenpå, idag og imorgen. <br\/><br\/>Hudpleje til mænd bliver aldrig det samme. <\/p>",
-          "link_text": "",
-          "link_url": "",
-          "section_border": true
-        }
-      },
       "list-collections-template": {
         "type": "list-collections-template",
         "settings": {
@@ -5791,6 +5778,19 @@
         "settings": {
           "Headline": "mænds hud"
         }
+      },
+      "165373239485584c85": {
+        "type": "two-column-text",
+        "settings": {
+          "text_1": "I ALT for lang tid har ingen turde udfordre status quo og være på forkant med tidens trends og behovet hos en ny generation af mænd i skønhedsindustrien. Den obligatoriske hudplejerutine bestående af rensegel, cream og scrub dækker ikke længere behovet hos en ny generation af kvalitets- og selvbevidste mænd, som ønsker at præsentere den bedste udgave af sig selv til verden. BARK™DNA repræsenterer en ny æra inden for hudpleje til mænd. Vi har gentænkt alt fra formler og ingredienser til eksisterende stereotyper og status quo i skønhedsindustrien. Vi har skabt en ny og smarter hudplejeserie og vi kalder den Hybrid Hudpleje.",
+          "text_2": "Hybrid Hudpleje, er high-performance hudpleje specifikt udviklet til mænds unikke hud og dens pH-værdi. Den booster hudens look øjeblikkeligt og giver samtidig den bedste pleje til mænds unikke hud. Alle produkter indeholder hybride egenskaber og arbejder på tværs af hinanden, sådan at du med kun fire produkter får den ultimative ansigtspleje - simpelt, subtilt og effektivt. Med BARK™DNA kan du være den bedste udgave af dig selv indeni og udenpå, idag og imorgen. Hudpleje til mænd bliver aldrig det samme. "
+        }
+      },
+      "1653732402d7a10d13": {
+        "type": "divider-headline",
+        "settings": {
+          "Headline": "BARK™DNA"
+        }
       }
     },
     "content_for_index": [
@@ -5802,7 +5802,8 @@
       "1647260954dafe04b8",
       "16536801279b505a0e",
       "16478693522918ff57",
-      "16322095778e1f4d09",
+      "1653732402d7a10d13",
+      "165373239485584c85",
       "165238361971bd98c9"
     ]
   },
