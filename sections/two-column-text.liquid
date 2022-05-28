@@ -1,7 +1,22 @@
+<div class="twoColumns">
+  <p>{{section.settings.text_1}}</p>
+  <p>{{section.settings.text_2}}</p>
+</div>
 {% schema %}
   {
     "name": "Section name",
-    "settings": []
+    "settings": [
+{
+"type": "text",
+"id": "text_1",
+"label": "FIrst text"
+},
+{
+"type": "text",
+"id": "text_2",
+"label": "Second text"
+}
+]
   }
 {% endschema %}
 
