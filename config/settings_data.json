@@ -5789,10 +5789,16 @@
           "button_1_text": "LÆS MERE",
           "button_1_link": ""
         }
+      },
+      "16537407490f7fe905": {
+        "type": "icons-text-row",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
       "1653600915f04e146d",
+      "16537407490f7fe905",
       "164762977142c0bc36",
       "16536708389a678b85",
       "1653678837e923a894",
