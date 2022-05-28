@@ -1620,7 +1620,6 @@ $(document).ready(function() {
     sections.register('cookie-banner', theme.CookieBanner);
 
 });
-console.log("ready")
 var divisor = document.getElementById("divisor"),
     slider = document.getElementById("slider");
 function moveDivisor() {
