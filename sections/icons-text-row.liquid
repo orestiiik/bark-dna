@@ -40,6 +40,58 @@
       </div>
        
     </div>
+<section class="iconsTextRowMobile" data-section-id="{{ section.id }}" >
+  <div class="marquee marqueeContainer">
+    <div class="iconText">
+         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-delivery" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="7" cy="17" r="2" />
+          <circle cx="17" cy="17" r="2" />
+          <path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+          <line x1="3" y1="9" x2="7" y2="9" />
+        </svg>
+         <p>Levering naeste dag</p>
+      </div>
+       <div class="iconText">
+         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="5" x2="5" y2="21" />
+          <line x1="19" y1="5" x2="19" y2="14" />
+          <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0" />
+          <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0" />
+        </svg>
+         <p>Produceret i Danmark</p>
+      </div>
+       <div class="iconText">
+         <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M27.5 33C30.5376 33 33 30.5376 33 27.5C33 24.4624 30.5376 22 27.5 22C24.4624 22 22 24.4624 22 27.5C22 30.5376 24.4624 33 27.5 33Z" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M23.8333 32.0833V40.3333L27.5 37.5833L31.1667 40.3333V32.0833" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18.3333 34.8333H9.16667C8.19421 34.8333 7.26158 34.447 6.57394 33.7594C5.88631 33.0718 5.5 32.1391 5.5 31.1667V12.8333C5.5 10.8167 7.15 9.16667 9.16667 9.16667H34.8333C35.8058 9.16667 36.7384 9.55298 37.4261 10.2406C38.1137 10.9282 38.5 11.8609 38.5 12.8333V31.1667C38.4993 31.8097 38.3296 32.4412 38.0078 32.9979C37.686 33.5546 37.2235 34.0168 36.6667 34.3383" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 16.5H33" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 22H16.5" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 27.5H14.6667" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+
+         <p>100% Tilfredshedsgaranti</p>
+      </div>
+       <div class="iconText">
+         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+          <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+        </svg>
+         <p>24/7 Support</p>
+      </div>
+  </div>
+</section>
+
+<script>
+$(function () {
+  $('.marquee').marquee({
+    speed: 100,
+    duplicated: true,
+    startVisible: true,
+    gap: 10
+  });
+});
+</script>
 {% schema %}
 {
 "name": "Icons text row",
