@@ -98,7 +98,6 @@
                       {{ 'product-' | append: current | placeholder_svg_tag: 'ProductItem__Image PlaceholderSvg PlaceholderSvg--dark' }}
                     </a>
 
-                    {%- if section.settings.show_product_info -%}
                       <div class="ProductItem__Info ProductItem__Info--{{ settings.product_info_alignment }}">
                         {%- if section.settings.show_vendor -%}
                           <p class="ProductItem__Vendor Heading">{{ 'home_page.onboarding.vendor_title' | t }}</p>
@@ -110,7 +109,6 @@
                           <span class="ProductItem__Price Price">{{ 3000 | money_without_trailing_zeros }}</span>
                         </div>
                       </div>
-                    {%- endif -%}
                   </div>
                 </div>
               </div>
