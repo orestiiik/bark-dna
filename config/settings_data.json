@@ -5320,10 +5320,20 @@
               "grid_items_count": 4,
               "button_text": "View all products"
             }
+          },
+          "451aade9-1b3f-474a-aeac-d7b864b5306f": {
+            "type": "collection",
+            "settings": {
+              "collection": "sets",
+              "title": "",
+              "grid_items_count": 8,
+              "button_text": "View all products"
+            }
           }
         },
         "block_order": [
-          "d9a5f85f-49d8-444f-84fd-247256076cf4"
+          "d9a5f85f-49d8-444f-84fd-247256076cf4",
+          "451aade9-1b3f-474a-aeac-d7b864b5306f"
         ],
         "settings": {
           "title": "Bestsellers",
