@@ -14773,6 +14773,9 @@ height: 100%;
   padding-left: 5vw;
   padding-right: 5vw;
 }
+.iconsTextRowMobile {
+  display: none
+}
 .iconsTextRow {
   display: flex;
   height: 50px;
@@ -14842,7 +14845,10 @@ height: 100%;
 
 
 @media only screen and (max-width: 600px) {
-  .iconsTextRow { 
-    flex-direction: column
+  .iconsTextRowMobile { 
+    display: flex
+  }
+  .iconsTextRow {
+    display: none
   }
 }
