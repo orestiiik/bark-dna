@@ -5814,6 +5814,18 @@
         "type": "images_marquee",
         "settings": {
         }
+      },
+      "big-shop-title": {
+        "type": "big-shop-title",
+        "settings": {
+          "title": "SHOP"
+        }
+      },
+      "divider-headline": {
+        "type": "divider-headline",
+        "settings": {
+          "Headline": "PRODUKTER"
+        }
       }
     },
     "content_for_index": [
