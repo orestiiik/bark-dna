@@ -14839,9 +14839,20 @@ height: 100%;
 .TabList__Item {
   font-size: 18px
 }
-
+.iconsMarqueeContainer {
+  	display: none;
+  }
+  .iconsTextRow {
+  	display: flex;
+  }
 
 @media only screen and (max-width: 600px) {
+  .iconsMarqueeContainer {
+  	display: block;
+  }
+  .iconsTextRow {
+  	display: none;
+  }
   .iconsTextRowMobile .iconText {
   display: flex;
   align-self: center;
