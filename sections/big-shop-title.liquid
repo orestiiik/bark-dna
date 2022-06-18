@@ -1,12 +1,27 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
-
+<h1 style="text-align: center;">
+  {{ section.settings.title }}
+</h1>
 {% stylesheet %}
 {% endstylesheet %}
 
 {% javascript %}
 {% endjavascript %}
+{% schema %}
+{
+  "name": "Shop title",
+  "settings": [
+{
+    "type": "text",
+"id": "title",
+"label": "Title",
+"default": "#"
+}
+],
+"presets": [
+{
+"name": "Hero video",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}
