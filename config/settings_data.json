@@ -559,15 +559,11 @@
       "page-special-01": {
         "type": "page-special-01",
         "blocks": {
-          "1ae42737-0239-415c-b769-fd2932895e6f": {
-            "type": "rich-text",
+          "c601b3d3-f395-4bfa-94af-afc7b118c31f": {
+            "type": "title-divider-text",
             "settings": {
-              "subtitle": "",
-              "title": "om os",
-              "text": "<p>BARK™DNA repræsenterer en ny æra inden for hudpleje til mænd ved at konfrontere stereotyper og ændre på vores forståelse af maskulinitet ift. hudpleje. Vi introducerer fremtidens hudplejeløsninger til den næste generation af mænd, og vi kalder den Hybrid Hudpleje.<\/p>",
-              "align_text": "center",
-              "narrow_column": true,
-              "enlarge_text": true
+              "title": "OM OS",
+              "text": "BARK™DNA repræsenterer en ny æra inden for hudpleje til mænd ved at konfrontere stereotyper og ændre på vores forståelse af maskulinitet ift. hudpleje. Vi introducerer fremtidens hudplejeløsninger til den næste generation af mænd, og vi kalder den Hybrid Hudpleje."
             }
           },
           "6bb23dd4-7ed5-465c-b074-ea898140185d": {
@@ -677,7 +673,7 @@
           }
         },
         "block_order": [
-          "1ae42737-0239-415c-b769-fd2932895e6f",
+          "c601b3d3-f395-4bfa-94af-afc7b118c31f",
           "6bb23dd4-7ed5-465c-b074-ea898140185d",
           "7d9ea4cb-1549-4e27-95fb-f5c2eea81bc2",
           "a1730751-76f4-466c-921d-a0773a5b623a",
