@@ -1,12 +1,61 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
-
+<div class='shop-footer'>
+  <p>Alle vores produkter er udviklet til mends unikke hud og dens pH-vaerdi (4,6-4,9).</p>
+  <div style='display: flex;'>
+    <p>Cleansing Pads
+      <br>
+    Hybrid hudplejelosning der kombinerer en mild rens til at
+    forebygge og bekeempe uren hud, med en serums
+    Tugtgivende naering der efterlader huden super frisk og
+    velfugtet.
+    </p>
+    <p>
+      pH-Balancing Toner
+      <br>
+    En fugtgivende toner der reducerer glans, minimerer
+    poreri-zonen og forebygger mod hudgener, samtidig
+    med at den forstaerker gennemtraengningen af Hero
+    Complexion Cream.
+    </p>
+  </div>
+  <div style='display: flex;'>
+    <p>24H Face Cream
+      <br>
+Det ultimative fugtboost til huden, som opstrammer
+elasticiteten og forbedrer hudens udstráling. Efterlader
+huden silkeblod, gennemfugtet og velplejet.
+    </p>
+    <p>
+      Hero Complexion Cream
+      <br>
+En ansigtscreme til maend som ingen anden! Hero
+Complexion Cream giver huden et ensartet udtryk og
+skjuler straks spor af uren hud, rodme og morke rander
+under ojnene - samtidig med, at den efterlader huden
+blodere, glattere og mere strālende.
+    </p>
+  </div>
+</div>
 {% stylesheet %}
 {% endstylesheet %}
 
 {% javascript %}
 {% endjavascript %}
+{% schema %}
+{
+  "name": "Shop footer",
+  "settings": [
+{
+    "type": "text",
+"id": "title",
+"label": "Title",
+"default": "#"
+}
+],
+"presets": [
+{
+"name": "Hero video",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}
