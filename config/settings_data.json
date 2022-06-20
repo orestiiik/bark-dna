@@ -591,48 +591,25 @@
               "button_color": "#363636"
             }
           },
-          "a81ca7f8-f859-4e20-92f1-88effb9cb37c": {
-            "type": "rich-text",
+          "7d9ea4cb-1549-4e27-95fb-f5c2eea81bc2": {
+            "type": "textBlock",
             "settings": {
-              "subtitle": "",
               "title": "Vores filosofi",
-              "text": "<p>Dit ansigt er dit vindue til verden, og det er verdens vindue til dig, derfor er en selvsikker fremtoning vigtig.<\/p>",
-              "align_text": "left",
-              "narrow_column": true,
-              "enlarge_text": true
+              "text": "Dit ansigt er dit vindue til verden, og det er verdens vindue til dig, derfor er en selvsikker fremtoning vigtig."
             }
           },
-          "84996f5f-22ae-471a-a1a0-72d8f1cac08e": {
-            "type": "rich-text",
+          "a1730751-76f4-466c-921d-a0773a5b623a": {
+            "type": "textBlock",
             "settings": {
-              "subtitle": "",
               "title": "Mission",
-              "text": "<p>Vi vil bidrage til en mere åben og nuanceret maskulinitetskultur, der afspejler nutiden og rummer alle, og vi vil hjælpe den næste generation af mænd med at eje deres tilstedeværelse. Det gør vi ved at tilbyde en helt ny kategori af hudpleje, der giver dig en oplevelse af styrket selvtillid og inspirerer dig til at stå frem med hovedet holdt højt i enhver situation.  <\/p>",
-              "align_text": "left",
-              "narrow_column": true,
-              "enlarge_text": true
+              "text": "Vi vil bidrage til en mere åben og nuanceret maskulinitetskultur, der afspejler nutiden og rummer alle, og vi vil hjælpe den næste generation af mænd med at eje deres tilstedeværelse. Det gør vi ved at tilbyde en helt ny kategori af hudpleje, der giver dig en oplevelse af styrket selvtillid og inspirerer dig til at stå frem med hovedet holdt højt i enhver situation. "
             }
           },
-          "b4214bab-a0e6-442f-b52d-ed56ae09a78e": {
-            "type": "rich-text",
+          "ffa31d43-b175-4e0f-b916-09c280818621": {
+            "type": "textBlock",
             "settings": {
-              "subtitle": "",
               "title": "Gennemsigtighed",
-              "text": "<p>Med en ærlig og reel tilgang tilstræber vi os på at gøre op med skønhedsindustriens konventioner. Ærlighed, rummelighed og gennemsigtighed er fundamentet for vores forretningsfilosofi. For at være trofaste mod vores filosofi gennemsyrer dette hele vores mindset fra produktion til emballering og ingredienser. Derfor har vi bl.a. valgt at integrere ingredienserne som en del af designet på vores emballage.<\/p>",
-              "align_text": "left",
-              "narrow_column": true,
-              "enlarge_text": true
-            }
-          },
-          "2ce9ad2d-aaa5-4dc6-baa7-c1ef4f389837": {
-            "type": "rich-text",
-            "settings": {
-              "subtitle": "",
-              "title": "",
-              "text": "",
-              "align_text": "left",
-              "narrow_column": true,
-              "enlarge_text": false
+              "text": "Med en ærlig og reel tilgang tilstræber vi os på at gøre op med skønhedsindustriens konventioner. Ærlighed, rummelighed og gennemsigtighed er fundamentet for vores forretningsfilosofi. For at være trofaste mod vores filosofi gennemsyrer dette hele vores mindset fra produktion til emballering og ingredienser. Derfor har vi bl.a. valgt at integrere ingredienserne som en del af designet på vores emballage."
             }
           },
           "611dd12e-877f-42af-ab9b-b2a65c8036ff": {
@@ -656,37 +633,25 @@
               "button_color": "#363636"
             }
           },
-          "72e1fd3a-eacd-4cad-8888-ef77ab2d25b3": {
-            "type": "rich-text",
+          "35533b4c-8971-4639-b5bd-29a6393152ea": {
+            "type": "textBlock",
             "settings": {
-              "subtitle": "",
               "title": "Dansk Produceret",
-              "text": "<p>Vi importerer ikke bare eksisterende, færdigblandede produkter og giver dem en ny indpakning. Alle vores produkter er udviklet i samarbejde med kemiingeniører og dermatologer i Danmark og overholder de mest stringente produktionsstandarder.<\/p>",
-              "align_text": "left",
-              "narrow_column": true,
-              "enlarge_text": true
+              "text": "Vi importerer ikke bare eksisterende, færdigblandede produkter og giver dem en ny indpakning. Alle vores produkter er udviklet i samarbejde med kemiingeniører og dermatologer i Danmark og overholder de mest stringente produktionsstandarder."
             }
           },
-          "05bde69b-411a-45f1-963b-2dade77a1d13": {
-            "type": "rich-text",
+          "a57640b1-5673-49df-8cac-9b2938cfe9f5": {
+            "type": "textBlock",
             "settings": {
-              "subtitle": "",
               "title": "Bæredygtighed",
-              "text": "<p>Der er ingen Planet B. Vores mål er at blive så bæredygtige som muligt og bidrage til at skabe en mere bæredygtig planet. Vi bruger så mange genbrugsmaterialer som muligt. Alle produkter bliver udviklet og produceret i Danmark, og klimaaftrykket minimeres gennem kortere forsyningskæder. Da gennemsigtighed er fundamentet i vores forretningsfilosofi, forsøger vi at finde balancen mellem at opbygge en bæredygtig forretning og at prioritere miljøet. Vi er ikke perfekte, men vi engagerer os aktivt i at reducere vores indflydelse på miljøet, og for at bidrage til en renere og bedre verden er vi altid på udkig efter samarbejdspartnere inden for bæredygtighedsområdet, som vi kan arbejde med. <\/p>",
-              "align_text": "left",
-              "narrow_column": true,
-              "enlarge_text": true
+              "text": "Der er ingen Planet B. Vores mål er at blive så bæredygtige som muligt og bidrage til at skabe en mere bæredygtig planet. Vi bruger så mange genbrugsmaterialer som muligt. Alle produkter bliver udviklet og produceret i Danmark, og klimaaftrykket minimeres gennem kortere forsyningskæder. Da gennemsigtighed er fundamentet i vores forretningsfilosofi, forsøger vi at finde balancen mellem at opbygge en bæredygtig forretning og at prioritere miljøet. Vi er ikke perfekte, men vi engagerer os aktivt i at reducere vores indflydelse på miljøet, og for at bidrage til en renere og bedre verden er vi altid på udkig efter samarbejdspartnere inden for bæredygtighedsområdet, som vi kan arbejde med. "
             }
           },
-          "75feead5-744d-4101-bb6f-c46dc85793e5": {
-            "type": "rich-text",
+          "c5c22918-2027-455b-8af6-b360d424a89a": {
+            "type": "textBlock",
             "settings": {
-              "subtitle": "",
               "title": "Rene Standarder",
-              "text": "<p>Alle BARK™DNA produktformuleringer består af en kombination af effektive, naturlige og klinisk dokumenterede ingredienser, som har en videnskabelig bevist effekt, og som har været testet under fysiske, kemiske og mikrobiologiske kvalitetsstandarder. Ingen BARK™DNA produkter indeholder nogen af de 26 allergifremkaldende stoffer klassificeret i overensstemmelse med EU's Videnskabelige Komite for Forbrugersikkerhed.<\/p>",
-              "align_text": "left",
-              "narrow_column": true,
-              "enlarge_text": true
+              "text": "Alle BARK™DNA produktformuleringer består af en kombination af effektive, naturlige og klinisk dokumenterede ingredienser, som har en videnskabelig bevist effekt, og som har været testet under fysiske, kemiske og mikrobiologiske kvalitetsstandarder. Ingen BARK™DNA produkter indeholder nogen af de 26 allergifremkaldende stoffer klassificeret i overensstemmelse med EU's Videnskabelige Komite for Forbrugersikkerhed."
             }
           },
           "b1ccc06f-01d3-4493-bc3d-7f5383bafb2d": {
@@ -714,14 +679,13 @@
         "block_order": [
           "1ae42737-0239-415c-b769-fd2932895e6f",
           "6bb23dd4-7ed5-465c-b074-ea898140185d",
-          "a81ca7f8-f859-4e20-92f1-88effb9cb37c",
-          "84996f5f-22ae-471a-a1a0-72d8f1cac08e",
-          "b4214bab-a0e6-442f-b52d-ed56ae09a78e",
-          "2ce9ad2d-aaa5-4dc6-baa7-c1ef4f389837",
+          "7d9ea4cb-1549-4e27-95fb-f5c2eea81bc2",
+          "a1730751-76f4-466c-921d-a0773a5b623a",
+          "ffa31d43-b175-4e0f-b916-09c280818621",
           "611dd12e-877f-42af-ab9b-b2a65c8036ff",
-          "72e1fd3a-eacd-4cad-8888-ef77ab2d25b3",
-          "05bde69b-411a-45f1-963b-2dade77a1d13",
-          "75feead5-744d-4101-bb6f-c46dc85793e5",
+          "35533b4c-8971-4639-b5bd-29a6393152ea",
+          "a57640b1-5673-49df-8cac-9b2938cfe9f5",
+          "c5c22918-2027-455b-8af6-b360d424a89a",
           "b1ccc06f-01d3-4493-bc3d-7f5383bafb2d"
         ],
         "settings": {
