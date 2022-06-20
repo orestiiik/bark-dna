@@ -670,6 +670,12 @@
               "text_color": "#ffffff",
               "button_color": "#363636"
             }
+          },
+          "ddb1d1ea-6df3-414a-b777-f92e4f38a77e": {
+            "type": "divider",
+            "settings": {
+              "title": "Marco Vincent founder"
+            }
           }
         },
         "block_order": [
@@ -682,7 +688,8 @@
           "35533b4c-8971-4639-b5bd-29a6393152ea",
           "a57640b1-5673-49df-8cac-9b2938cfe9f5",
           "c5c22918-2027-455b-8af6-b360d424a89a",
-          "b1ccc06f-01d3-4493-bc3d-7f5383bafb2d"
+          "b1ccc06f-01d3-4493-bc3d-7f5383bafb2d",
+          "ddb1d1ea-6df3-414a-b777-f92e4f38a77e"
         ],
         "settings": {
           "header_enable": false,
