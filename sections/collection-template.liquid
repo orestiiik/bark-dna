@@ -446,18 +446,18 @@
              <div class="collection__seo--container">
                <div class="section__seo--inner Grid   ">
                 {%- if seo[1] != blank and seo[2] != blank -%}
-                 <div class="Grid__Cell Shop_Grid_Cell 1/1--phone 1/2--tablet-and-up 1/2--lap-and-up">
+                 <div class="Grid__Cell 1/1--phone 1/2--tablet-and-up 1/2--lap-and-up">
                    {%- if seo_1_description != blank -%}
                      {{seo_1_description}}
                    {%- else -%}
                    {{ seo[1] }}
                    {%- endif -%}
                  </div>
-                 <div class="Grid__Cell Shop_Grid_Cell 1/1--phone 1/2--tablet-and-up 1/2--lap-and-up">
+                 <div class="Grid__Cell 1/1--phone 1/2--tablet-and-up 1/2--lap-and-up">
                    {{ seo[2] }}
                  </div>
                 {%- elsif seo[1] != blank -%}
-                <div class="Grid__Cell Shop_Grid_Cell 1/1--phone 1/2--tablet-and-up 1/2--lap-and-up">
+                <div class="Grid__Cell 1/1--phone 1/2--tablet-and-up 1/2--lap-and-up">
                    {{ seo[1] }}
                  </div>
                 {%- endif -%}
