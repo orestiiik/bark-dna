@@ -14865,8 +14865,15 @@ height: 100%;
 .Grid__Cell {
   width: 33.33%;
 }
-
+@media only screen and (max-width: 850px) {
+  .Grid__Cell {
+  width: 50%;
+}
+}
 @media only screen and (max-width: 600px) {
+  .Grid__Cell {
+  width: 100%;
+}
   .collabsContainer {
   	display: none;
   }
