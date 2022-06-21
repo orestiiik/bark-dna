@@ -2923,6 +2923,20 @@
       "page-special-05": {
         "type": "page-special-05",
         "blocks": {
+          "e604730d-8ca5-435c-9c11-d83f02ca36a5": {
+            "type": "title-divider-text",
+            "settings": {
+              "title": "VIDENSKABEN BAG",
+              "text": "pH VAERDI Baseret på indsigter fra dermatologiske undersogelser og kliniske studier, har eksperter fundet ud af, at opretholdelsen af en stabil pH- vaerdi spiller den mest afgørende rolle for hudens sundhed. Her forklarer vi i et tydeligt sprog, hvad pH er, og hvorfor det har betydning for hudens sundhed. I den indledende tillblivelse af BARK\"DNA, gik vi sammen med førende dermatologer, som har dybtgående indsigt i hudens fysiologi, for at skabe den mest optimale hudplejeserie til maend. De sidste to år har eksperter inden for dermatologi researchet, testet og foretaget undersogelser for at udvikle den bedste hudplejeløsning til maænd."
+            }
+          },
+          "39cc3828-5eed-4461-9f45-01c4d902e81c": {
+            "type": "textBlock",
+            "settings": {
+              "title": "",
+              "text": ""
+            }
+          },
           "0d92c261-82a6-486c-b65f-874ad7bbaf8c": {
             "type": "spacing",
             "settings": {
@@ -3121,6 +3135,8 @@
           }
         },
         "block_order": [
+          "e604730d-8ca5-435c-9c11-d83f02ca36a5",
+          "39cc3828-5eed-4461-9f45-01c4d902e81c",
           "0d92c261-82a6-486c-b65f-874ad7bbaf8c",
           "a2fb0a36-8e47-4fc0-917c-2bf5dc9035e2",
           "cea102b8-4d84-43c9-89fc-dc37a037da0b",
@@ -3143,7 +3159,7 @@
           "ebc3ca68-07b8-4e87-b5e3-602e8269d542"
         ],
         "settings": {
-          "header_enable": true,
+          "header_enable": false,
           "title": "",
           "intro": "",
           "header_image": "shopify:\/\/shop_images\/2.0.jpg",
