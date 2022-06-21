@@ -105,7 +105,7 @@
       "sidebar-menu": {
         "type": "sidebar-menu",
         "settings": {
-          "primary_menu": "main-menu",
+          "primary_menu": "bark-2-0-menu",
           "secondary_menu": "f-lg-os",
           "show_social_media": true
         }
