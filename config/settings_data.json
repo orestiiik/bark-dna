@@ -5694,10 +5694,10 @@
         "type": "hero-video",
         "settings": {
           "subtitle": "MÆNDS HUDPLEJE 2.0",
-          "firstRow": "HUDPLEJE, DET FÅR DIG",
-          "secondRow": "TIL AT SE BEDRE UD",
-          "thirdRow": "MED DET SAMME",
-          "button_1_text": "SE PRODUKTER",
+          "firstRow": "own your",
+          "secondRow": "presence",
+          "thirdRow": "",
+          "button_1_text": "shop",
           "button_1_link": "\/collections\/produkter"
         }
       },
