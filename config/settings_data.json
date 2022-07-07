@@ -5704,9 +5704,9 @@
       "16536708389a678b85": {
         "type": "before-and-after",
         "settings": {
-          "Headlie": "FØR OG EFTER",
+          "Headlie": "boost dit look",
           "FirstText": "Check vores kunders vilde resultater med vores produkter her.",
-          "SecondText": "Alle billeder på denne side er udredigerede og efterbilledet er tager 10 minutter efter påføring af Hero Complexion",
+          "SecondText": "Alle billeder på denne side er udredigerede og efterbilledet er taget 10 minutter efter påføring af Hero Complexion",
           "before": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/6953\/6418\/files\/alex_before.jpg?v=1653672928",
           "after": "https:\/\/cdn.shopify.com\/s\/files\/1\/0566\/6953\/6418\/files\/alex_after.jpg?v=1653672928",
           "button_1_text": "SE MERE",
@@ -5758,7 +5758,6 @@
       },
       "16537407490f7fe905": {
         "type": "icons-text-row",
-        "disabled": true,
         "settings": {
         }
       },
