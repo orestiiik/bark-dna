@@ -1620,7 +1620,8 @@ $(document).ready(function() {
     sections.register('cookie-banner', theme.CookieBanner);
 
 });
-
-$(function moveDivisor() {
-  $('.divisor').style.width = $('.slider').value+"%";
+var divisor = document.getElementById("divisor"),
+    slider = document.getElementById("slider");
+function moveDivisor() {
+  divisor.style.width = slider.value+"%";
 }
